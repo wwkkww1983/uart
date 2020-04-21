@@ -1,0 +1,6 @@
+<!DOCTYPE Robei>
+<Module Parameters="" Color="#d3d3d3" Name="andgate" Class="module" Comment="" Include="" Type="module" Parent="0" Height="600" Y="0" File="Current/andgate.model" Width="900" X="0" Code="assign y = a&amp;b;&#xa;&#xa;&#xa;&#xa;&#xa;">
+ <Port Datatype="wire" Color="#faebd7" Name="a" Inout="input" Function="" Parent="andgate" Height="20" Y="0.231667" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="wire" Color="#00ffff" Name="b" Inout="input" Function="" Parent="andgate" Height="20" Y="0.481667" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="wire" Color="#7fffd4" Name="y" Inout="output" Function="" Parent="andgate" Height="20" Y="0.316667" Width="20" Side="right" X="0.977778" Datasize="1"/>
+</Module>

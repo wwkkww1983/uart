@@ -1,0 +1,9 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="module" Width="900" Class="module" Comment="" Code="always @ (A or B or op or F)&#xa;begin&#xa;&#x9;case ( op )&#xa;&#x9;&#x9;3'b000: {D,R}=A&amp;B; //实现与运算&#xa;&#x9;&#x9;3'b001: {D,R}=A|B; //实现或运算&#xa;&#x9;&#x9;3'b010: {D,R}=~A; //实现非运算&#xa;&#x9;&#x9;3'b011: {D,R}=A^B; //实现异或运算&#xa;&#x9;&#x9;3'b100: {D,R}=A+B; //实现不带进位的加运算&#xa;&#x9;&#x9;3'b101: {D,R}=A+B+F; //实现带进位的加运算&#xa;&#x9;&#x9;3'b110: {D,R}=A-B; //实现不带借位的减运算&#xa;&#x9;&#x9;3'b111: {D,R}=A-B-F; //实现带借位的减运算&#xa;&#x9;&#x9;default: {D,R}=A&amp;B; //默认为与运算&#xa;&#x9;endcase&#xa;end&#xa;" X="0" Parent="0" Name="alu" Include="" Color="#d3d3d3" Y="0" File="Current/alu.model" Parameters="">
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu" Name="A" Color="#faebd7" Y="0.195" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu" Name="B" Color="#00ffff" Y="0.351667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu" Name="F" Color="#7fffd4" Y="0.641667" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu" Name="R" Color="#f0ffff" Y="0.241667" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu" Name="D" Color="#f5f5dc" Y="0.481667" Datatype="reg" Datasize="1"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu" Name="op" Color="#ffe4c4" Y="0.51" Datatype="wire" Datasize="4"/>
+</Module>

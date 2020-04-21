@@ -1,0 +1,23 @@
+<!DOCTYPE Robei>
+<Module Height="547" Type="constrain" Width="1185" Class="module" Comment="" Code="&#xa;&#xa;&#xa;" X="95.8814" Parent="0" Name="light_constrain" Include="" Color="#d3d3d3" Y="69.1928" File="Current/light_constrain.const" Parameters="">
+ <Module Height="304" Type="model" Width="374" Class="light" Comment="" Code="assign led[0] = ~swt[0];&#xa;assign led[1] = swt[1] &amp; ~swt[2];&#xa;assign led[3] = swt[2] &amp; swt[3];&#xa;assign led[2] = (swt[1] &amp; ~swt[2]) | (swt[2] &amp; swt[3]);&#xa;" X="356.657" Parent="light_constrain" Name="light1" Include="" Color="#d3d3d3" Y="107.967" File="Current/light.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0534759" Function="" Parent="light1" Name="swt" Connect="" Color="#6495ed" Y="0.299342" Datatype="wire" Datasize="4"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.946524" Function="" Parent="light1" Name="led" Connect="" Color="#00ffff" Y="0.299342" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0168776" Function="" Parent="light_constrain" Name="G15" Color="#0000ff" Y="0.14808" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0168776" Function="" Parent="light_constrain" Name="P15" Color="#0000ff" Y="0.314442" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0168776" Function="" Parent="light_constrain" Name="W13" Color="#0000ff" Y="0.480804" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0168776" Function="" Parent="light_constrain" Name="T16" Color="#0000ff" Y="0.647166" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.983122" Function="" Parent="light_constrain" Name="M14" Color="#b8860b" Y="0.14808" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.983122" Function="" Parent="light_constrain" Name="M15" Color="#b8860b" Y="0.314442" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.983122" Function="" Parent="light_constrain" Name="G14" Color="#b8860b" Y="0.480804" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.983122" Function="" Parent="light_constrain" Name="D18" Color="#b8860b" Y="0.647166" Datatype="wire" Datasize="1"/>
+ <Wire Parent="light_constrain" To="light_constrain#light1>swt" Name="0" From="light_constrain>G15" Datatype="wire" Datasize="1"/>
+ <Wire Parent="light_constrain" To="light_constrain#light1>swt" Name="1" From="light_constrain>P15" Datatype="wire" Datasize="1"/>
+ <Wire Parent="light_constrain" To="light_constrain#light1>swt" Name="2" From="light_constrain>W13" Datatype="wire" Datasize="1"/>
+ <Wire Parent="light_constrain" To="light_constrain#light1>swt" Name="3" From="light_constrain>T16" Datatype="wire" Datasize="1"/>
+ <Wire Parent="light_constrain" To="light_constrain>M14" Name="0" From="light_constrain#light1>led" Datatype="wire" Datasize="4"/>
+ <Wire Parent="light_constrain" To="light_constrain>M15" Name="1" From="light_constrain#light1>led" Datatype="wire" Datasize="4"/>
+ <Wire Parent="light_constrain" To="light_constrain>G14" Name="2" From="light_constrain#light1>led" Datatype="wire" Datasize="4"/>
+ <Wire Parent="light_constrain" To="light_constrain>D18" Name="3" From="light_constrain#light1>led" Datatype="wire" Datasize="4"/>
+</Module>

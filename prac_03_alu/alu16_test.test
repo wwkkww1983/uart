@@ -1,0 +1,23 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="testbench" Width="900" Class="module" Comment="" Code="initial begin &#xa;&#x9;a=0;&#xa;&#x9;b=0;&#xa;&#x9;op=0;&#xa;&#x9;cin=0;&#xa;&#x9;#1&#xa;&#x9;a=24;&#xa;&#x9;b=35;&#xa;&#x9;op=0;&#xa;&#x9;#1&#xa;&#x9;a=56;&#xa;&#x9;b=18;&#xa;&#x9;op=1;&#xa;&#x9;#1&#xa;&#x9;a=96;&#xa;&#x9;b=80;&#xa;&#x9;op=2;&#xa;&#x9;#1&#xa;&#x9;a=51;&#xa;&#x9;b=26;&#xa;&#x9;op=3;&#xa;&#x9;#1&#xa;&#x9;a=128;&#xa;&#x9;b=128;&#xa;&#x9;op=4;&#xa;&#x9;#1&#xa;&#x9;a=64;&#xa;&#x9;b=15;&#xa;&#x9;cin=1;&#xa;&#x9;op=5;&#xa;&#x9;#1&#xa;&#x9;a=74;&#xa;&#x9;b=35;&#xa;&#x9;op=6;&#xa;&#x9;#1&#xa;&#x9;a=24;&#xa;&#x9;b=75;&#xa;&#x9;op=7;&#xa;&#x9;#1&#xa;&#x9;a=24;&#xa;&#x9;b=55;&#xa;&#x9;op=0;&#xa;&#x9;#1&#xa;&#x9;$finish;&#xa;end&#xa;" X="0" Time_Scale="" Parent="0" Name="alu16_test" Include="" Color="#d3d3d3" Y="0" File="Current/alu16_test.test">
+ <Module Height="243" Type="model" Width="234" Class="alu16" Comment="" Code="&#xa;&#xa;&#xa;" X="371.303" Parent="alu16_test" Name="alu161" Include="" Color="#d3d3d3" Y="168.121" File="Current/alu16.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0854701" Function="" Parent="alu161" Name="A" Connect="" Color="#ff69b4" Y="0.123457" Datatype="wire" Datasize="16"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0854701" Function="" Parent="alu161" Name="B" Connect="" Color="#00ffff" Y="0.288066" Datatype="wire" Datasize="16"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0854701" Function="" Parent="alu161" Name="op" Connect="" Color="#7fffd4" Y="0.452675" Datatype="wire" Datasize="4"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0854701" Function="" Parent="alu161" Name="cin" Connect="" Color="#00ffff" Y="0.617284" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.91453" Function="" Parent="alu161" Name="result" Connect="" Color="#f5f5dc" Y="0.205761" Datatype="wire" Datasize="16"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.91453" Function="" Parent="alu161" Name="cout" Connect="" Color="#ffe4c4" Y="0.452675" Datatype="wire" Datasize="1"/>
+ </Module>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu16_test" Name="a" Color="#ff69b4" Y="0.15" Datatype="reg" Datasize="16"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu16_test" Name="b" Color="#00ffff" Y="0.316667" Datatype="reg" Datasize="16"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu16_test" Name="op" Color="#7fffd4" Y="0.483333" Datatype="reg" Datasize="4"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu16_test" Name="cin" Color="#008000" Y="0.65" Datatype="reg" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu16_test" Name="result" Color="#8a2be2" Y="0.233333" Datatype="wire" Datasize="16"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu16_test" Name="cout" Color="#dc143c" Y="0.483333" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu16_test" To="alu16_test#alu161>A" Name="alu16_test_a" From="alu16_test>a" Datatype="wire" Datasize="16"/>
+ <Wire Parent="alu16_test" To="alu16_test#alu161>op" Name="alu16_test_op" From="alu16_test>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu16_test" To="alu16_test#alu161>B" Name="alu16_test_b" From="alu16_test>b" Datatype="wire" Datasize="16"/>
+ <Wire Parent="alu16_test" To="alu16_test#alu161>cin" Name="alu16_test_cin" From="alu16_test>cin" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu16_test" To="alu16_test#alu161>result" Name="alu161_result" From="alu16_test>result" Datatype="wire" Datasize="16"/>
+ <Wire Parent="alu16_test" To="alu16_test#alu161>cout" Name="alu161_cout" From="alu16_test>cout" Datatype="wire" Datasize="1"/>
+</Module>

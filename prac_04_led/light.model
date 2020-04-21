@@ -1,0 +1,5 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="module" Width="900" Class="module" Comment="" Code="assign led[0] = ~swt[0];&#xa;assign led[1] = swt[1] &amp; ~swt[2];&#xa;assign led[3] = swt[2] &amp; swt[3];&#xa;assign led[2] = (swt[1] &amp; ~swt[2]) | (swt[2] &amp; swt[3]);&#xa;" X="0" Parent="0" Name="light" Include="" Color="#d3d3d3" Y="0" File="Current/light.model" Parameters="">
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="light" Name="swt" Color="#6495ed" Y="0.316667" Datatype="wire" Datasize="4"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="light" Name="led" Color="#00ffff" Y="0.316667" Datatype="wire" Datasize="4"/>
+</Module>

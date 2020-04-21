@@ -1,0 +1,90 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort -8 -8 1296 705 174 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_01_uart\key_test.vcd" "F:\Robei\practice\homework_01_uart\key_test.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 120000001.000000
+cursor 40000011.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 11
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByRising
+
+
+addGroup "G1"
+activeDirFile "" "F:\Robei\practice\homework_01_uart\key_test.vcd.fsdb"
+addSignal -h 15 /key_test/clk
+addSignal -h 15 -UNSIGNED -HEX -holdScope key_in[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope key_out[3:0]
+addSignal -h 15 -holdScope key_pressed
+addSignal -h 15 -holdScope rst_n
+addGroup "G2"
+addSignal -h 15 /key_test/key1/clk
+addSignal -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope key_in[3:0]
+addSignal -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope key_in_q[3:0]
+addSignal -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope key_flag[3:0]
+addSignal -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope key_flag_delay[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt[19:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope key_out[3:0]
+addSignal -h 15 -holdScope key_pressed
+addSignal -h 15 -holdScope rst_n
+addGroup "G3"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_01_uart\key_test.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/key_test"
+"/key_test/key1"
+
+SCOPE_LIST_BEGIN
+"/key_test/key1"
+"/key_test"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

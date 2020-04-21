@@ -1,0 +1,14 @@
+<!DOCTYPE Robei>
+<Module Color="#d3d3d3" Name="addtest" Class="module" Comment="" Include="" Type="testbench" Time_Scale="" Parent="0" Height="600" Y="0" File="Current/addtest.test" Width="900" X="0" Code="initial begin &#xa;&#x9;p0 = 0;  p1 = 1;&#xa;&#x9;#10;&#xa;&#x9;p0 = 1;  p1= 0;&#xa;&#x9;#10;&#xa;&#x9;p0 = 1;  p1 = 1; &#xa;&#x9;#10;&#xa;&#x9;p0 = 0;  p1 = 0;&#xa;&#x9;#10;&#xa;&#x9;$finish;&#xa;end&#xa;&#xa;&#xa;">
+ <Module Parameters="" Color="#d3d3d3" Name="andgate1" Class="andgate" Comment="" Include="" Type="model" Parent="addtest" Height="160" Y="186.886" File="Current/andgate.model" Width="160" X="242.241" Code="assign y = a&amp;b;&#xa;&#xa;&#xa;&#xa;&#xa;">
+  <Port Datatype="wire" Color="#faebd7" Name="a" Inout="input" Function="" Parent="andgate1" Height="20" Y="0.23125" Width="20" Connect="" Side="left" X="-0.125" Datasize="1"/>
+  <Port Datatype="wire" Color="#00ffff" Name="b" Inout="input" Function="" Parent="andgate1" Height="20" Y="0.48125" Width="20" Connect="" Side="left" X="-0.125" Datasize="1"/>
+  <Port Datatype="wire" Color="#7fffd4" Name="y" Inout="output" Function="" Parent="andgate1" Height="20" Y="0.3125" Width="20" Connect="" Side="right" X="0.875" Datasize="1"/>
+ </Module>
+ <Port Datatype="reg" Color="#faebd7" Name="p0" Inout="input" Function="" Parent="addtest" Height="20" Y="0.233333" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="reg" Color="#00ffff" Name="p1" Inout="input" Function="" Parent="addtest" Height="20" Y="0.483333" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="wire" Color="#7fffd4" Name="p2" Inout="output" Function="" Parent="addtest" Height="20" Y="0.316667" Width="20" Side="right" X="0.977778" Datasize="1"/>
+ <Wire Datatype="wire" Name="addtest_p0" From="addtest>p0" To="addtest#andgate1>a" Parent="addtest" Datasize="1"/>
+ <Wire Datatype="wire" Name="addtest_p1" From="addtest>p1" To="addtest#andgate1>b" Parent="addtest" Datasize="1"/>
+ <Wire Datatype="wire" Name="andgate1_y" From="addtest#andgate1>y" To="addtest>p2" Parent="addtest" Datasize="1"/>
+</Module>

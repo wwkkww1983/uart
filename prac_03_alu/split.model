@@ -1,0 +1,6 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="module" Width="900" Class="module" Comment="" Code="assign B = A[7:0];&#xa;assign C = A[15:8];&#xa;" X="0" Parent="0" Name="split" Include="" Color="#d3d3d3" Y="0" File="Current/split.model" Parameters="">
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="split" Name="A" Color="#faebd7" Y="0.316667" Datatype="wire" Datasize="16"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="split" Name="B" Color="#00ffff" Y="0.231667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="split" Name="C" Color="#7fffd4" Y="0.481667" Datatype="wire" Datasize="8"/>
+</Module>

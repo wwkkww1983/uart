@@ -1,0 +1,11 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="testbench" Width="900" Class="module" Comment="" Code="initial begin&#xa;&#x9;#5 switches=4'b1111;&#xa;&#x9;#5 switches=4'b1110;&#xa;&#x9;#5 switches=4'b1101;&#xa;&#x9;#5 switches=4'b1010;&#xa;&#x9;#5 switches=4'b1011;&#xa;&#x9;#5 switches=4'b0110;&#xa;&#x9;#5 switches=4'b0101;&#xa;&#x9;#5 switches=4'b0110;&#xa;&#x9;#10 $finish;&#xa;end&#xa;&#xa;&#xa;" X="0" Time_Scale="" Parent="0" Name="light_test" Include="" Color="#d3d3d3" Y="0" File="Current/light_test.test">
+ <Module Height="280" Type="model" Width="367" Class="light" Comment="" Code="assign led[0] = ~swt[0];&#xa;assign led[1] = swt[1] &amp; ~swt[2];&#xa;assign led[3] = swt[2] &amp; swt[3];&#xa;assign led[2] = (swt[1] &amp; ~swt[2]) | (swt[2] &amp; swt[3]);&#xa;" X="267.241" Parent="light_test" Name="light1" Include="" Color="#d3d3d3" Y="179.275" File="Current/light.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0544959" Function="" Parent="light1" Name="swt" Connect="" Color="#6495ed" Y="0.296429" Datatype="wire" Datasize="4"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.945504" Function="" Parent="light1" Name="led" Connect="" Color="#00ffff" Y="0.296429" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="light_test" Name="switches" Color="#6495ed" Y="0.316667" Datatype="reg" Datasize="4"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="light_test" Name="leds" Color="#00ffff" Y="0.316667" Datatype="wire" Datasize="4"/>
+ <Wire Parent="light_test" To="light_test#light1>swt" Name="light_test_switchs" From="light_test>switches" Datatype="wire" Datasize="4"/>
+ <Wire Parent="light_test" To="light_test>leds" Name="light1_led" From="light_test#light1>led" Datatype="wire" Datasize="4"/>
+</Module>

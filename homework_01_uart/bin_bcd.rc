@@ -1,0 +1,112 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 2556 142 1288 693 191 46
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_01_uart\bin_bcd_test.vcd" "F:\Robei\practice\homework_01_uart\bin_bcd_test.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 411.000000
+cursor 31.000000
+marker 12.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 21
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname bin_bcd.cs
+nalias SHIFT		3'b010		NULL
+nalias DONE		3'b100		NULL
+nalias IDLE		3'b001		NULL
+
+addGroup "G1"
+activeDirFile "" "F:\Robei\practice\homework_01_uart\bin_bcd_test.vcd.fsdb"
+addSignal -h 15 /bin_bcd_test/clk
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -holdScope tran_en
+addSignal -h 15 -UNSIGNED -UDEC -holdScope data_in[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope ones_place[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope tens_place[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope hundreds_place[3:0]
+addSignal -h 15 -holdScope tran_done
+addGroup "G2"
+addSignal -h 15 /bin_bcd_test/bin_bcd1/clk
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -holdScope tran_en
+aliasname bin_bcd.cs
+addSignal -h 15 -UNSIGNED -HEX -holdScope ns[2:0]
+aliasname bin_bcd.cs
+addSignal -h 15 -UNSIGNED -HEX -holdScope cs[2:0]
+addSignal -c ID_PURPLE5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope shift_cnt[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope data_in[7:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_reg[7:0]
+addSignal -c ID_RED5 -ls solid -lw 1 -h 15 -UNSIGNED -BIN -holdScope ones_reg[3:0]
+addSignal -c ID_RED5 -ls solid -lw 1 -h 15 -UNSIGNED -BIN -holdScope ones_temp[3:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 15 -UNSIGNED -BIN -holdScope tens_reg[3:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 15 -UNSIGNED -BIN -holdScope tens_temp[3:0]
+addSignal -c ID_ORANGE5 -ls solid -lw 1 -h 15 -UNSIGNED -BIN -holdScope hundreds_reg[3:0]
+addSignal -c ID_ORANGE5 -ls solid -lw 1 -h 15 -UNSIGNED -BIN -holdScope hundreds_temp[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ones_out[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope tens_out[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope hundreds_out[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ones_place[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope tens_place[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope hundreds_place[3:0]
+addSignal -h 15 -holdScope tran_done
+addGroup "G3"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_01_uart\bin_bcd_test.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/bin_bcd_test"
+"/bin_bcd_test/bin_bcd1"
+
+SCOPE_LIST_BEGIN
+"/bin_bcd_test"
+"/bin_bcd_test/bin_bcd1"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

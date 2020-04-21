@@ -1,0 +1,54 @@
+<!DOCTYPE Robei>
+<Module Height="692" Type="module" Width="1142" Class="module" Comment="" Code="&#xa;&#xa;&#xa;" X="0" Parent="0" Name="alu16" Include="" Color="#d3d3d3" Y="0" File="Current/alu16.model" Parameters="">
+ <Module Height="105" Type="model" Width="125" Class="split" Comment="" Code="assign B = A[7:0];&#xa;assign C = A[15:8];&#xa;" X="107.385" Parent="alu16" Name="split1" Include="" Color="#d3d3d3" Y="35" File="Current/split.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.16" Function="" Parent="split1" Name="A" Connect="" Color="#faebd7" Y="0.238095" Datatype="wire" Datasize="16"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.84" Function="" Parent="split1" Name="B" Connect="" Color="#00ffff" Y="0.152381" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.84" Function="" Parent="split1" Name="C" Connect="" Color="#7fffd4" Y="0.4" Datatype="wire" Datasize="8"/>
+ </Module>
+ <Module Height="105" Type="model" Width="123" Class="split" Comment="" Code="assign B = A[7:0];&#xa;assign C = A[15:8];&#xa;" X="107.253" Parent="alu16" Name="split2" Include="" Color="#d3d3d3" Y="191.002" File="Current/split.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.162602" Function="" Parent="split2" Name="A" Connect="" Color="#faebd7" Y="0.238095" Datatype="wire" Datasize="16"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.837398" Function="" Parent="split2" Name="B" Connect="" Color="#00ffff" Y="0.152381" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.837398" Function="" Parent="split2" Name="C" Connect="" Color="#7fffd4" Y="0.4" Datatype="wire" Datasize="8"/>
+ </Module>
+ <Module Height="160" Type="model" Width="160" Class="alu" Comment="" Code="always @ (A or B or op or F)&#xa;begin&#xa;&#x9;case ( op )&#xa;&#x9;&#x9;3'b000: {D,R}=A&amp;B; //实现与运算&#xa;&#x9;&#x9;3'b001: {D,R}=A|B; //实现或运算&#xa;&#x9;&#x9;3'b010: {D,R}=~A; //实现非运算&#xa;&#x9;&#x9;3'b011: {D,R}=A^B; //实现异或运算&#xa;&#x9;&#x9;3'b100: {D,R}=A+B; //实现不带进位的加运算&#xa;&#x9;&#x9;3'b101: {D,R}=A+B+F; //实现带进位的加运算&#xa;&#x9;&#x9;3'b110: {D,R}=A-B; //实现不带借位的减运算&#xa;&#x9;&#x9;3'b111: {D,R}=A-B-F; //实现带借位的减运算&#xa;&#x9;&#x9;default: {D,R}=A&amp;B; //默认为与运算&#xa;&#x9;endcase&#xa;end&#xa;" X="383.221" Parent="alu16" Name="alu3" Include="" Color="#d3d3d3" Y="199.745" File="Current/alu.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu3" Name="A" Connect="" Color="#faebd7" Y="0.1" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu3" Name="B" Connect="" Color="#00ffff" Y="0.2625" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu3" Name="F" Connect="" Color="#7fffd4" Y="0.5875" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.875" Function="" Parent="alu3" Name="R" Connect="" Color="#f0ffff" Y="0.1875" Datatype="reg" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.875" Function="" Parent="alu3" Name="D" Connect="" Color="#f5f5dc" Y="0.4375" Datatype="reg" Datasize="1"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu3" Name="op" Connect="" Color="#ffe4c4" Y="0.425" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Module Height="160" Type="model" Width="160" Class="alu" Comment="" Code="always @ (A or B or op or F)&#xa;begin&#xa;&#x9;case ( op )&#xa;&#x9;&#x9;3'b000: {D,R}=A&amp;B; //实现与运算&#xa;&#x9;&#x9;3'b001: {D,R}=A|B; //实现或运算&#xa;&#x9;&#x9;3'b010: {D,R}=~A; //实现非运算&#xa;&#x9;&#x9;3'b011: {D,R}=A^B; //实现异或运算&#xa;&#x9;&#x9;3'b100: {D,R}=A+B; //实现不带进位的加运算&#xa;&#x9;&#x9;3'b101: {D,R}=A+B+F; //实现带进位的加运算&#xa;&#x9;&#x9;3'b110: {D,R}=A-B; //实现不带借位的减运算&#xa;&#x9;&#x9;3'b111: {D,R}=A-B-F; //实现带借位的减运算&#xa;&#x9;&#x9;default: {D,R}=A&amp;B; //默认为与运算&#xa;&#x9;endcase&#xa;end&#xa;" X="619.928" Parent="alu16" Name="alu4" Include="" Color="#d3d3d3" Y="379.823" File="Current/alu.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu4" Name="A" Connect="" Color="#faebd7" Y="0.1" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu4" Name="B" Connect="" Color="#00ffff" Y="0.2625" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu4" Name="F" Connect="" Color="#7fffd4" Y="0.5875" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.875" Function="" Parent="alu4" Name="R" Connect="" Color="#f0ffff" Y="0.1875" Datatype="reg" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.875" Function="" Parent="alu4" Name="D" Connect="" Color="#f5f5dc" Y="0.4375" Datatype="reg" Datasize="1"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu4" Name="op" Connect="" Color="#ffe4c4" Y="0.425" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Module Height="160" Type="model" Width="160" Class="merge" Comment="" Code="assign C = {A,B};&#xa;" X="855.502" Parent="alu16" Name="merge5" Include="" Color="#d3d3d3" Y="145.381" File="Current/merge.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="merge5" Name="A" Connect="" Color="#faebd7" Y="0.1875" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="merge5" Name="B" Connect="" Color="#00ffff" Y="0.4375" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.875" Function="" Parent="merge5" Name="C" Connect="" Color="#7fffd4" Y="0.26875" Datatype="wire" Datasize="16"/>
+ </Module>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0175131" Function="" Parent="alu16" Name="A" Color="#ff69b4" Y="0.151734" Datatype="wire" Datasize="16"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0175131" Function="" Parent="alu16" Name="B" Color="#00ffff" Y="0.317919" Datatype="wire" Datasize="16"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0175131" Function="" Parent="alu16" Name="op" Color="#7fffd4" Y="0.484104" Datatype="wire" Datasize="4"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0175131" Function="" Parent="alu16" Name="cin" Color="#00ffff" Y="0.650289" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.982487" Function="" Parent="alu16" Name="result" Color="#f5f5dc" Y="0.235549" Datatype="wire" Datasize="16"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.982487" Function="" Parent="alu16" Name="cout" Color="#ffe4c4" Y="0.485549" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu16" To="alu16#split1>A" Name="alu16_A" From="alu16>A" Datatype="wire" Datasize="16"/>
+ <Wire Parent="alu16" To="alu16#split2>A" Name="alu16_B" From="alu16>B" Datatype="wire" Datasize="16"/>
+ <Wire Parent="alu16" To="alu16#alu3>A" Name="split1_B" From="alu16#split1>B" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu16" To="alu16#alu3>B" Name="split2_B" From="alu16#split2>B" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu16" To="alu16#alu3>op" Name="alu16_op" From="alu16>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu16" To="alu16#alu4>op" Name="alu16_op" From="alu16>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu16" To="alu16#alu3>F" Name="alu16_cin" From="alu16>cin" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu16" To="alu16#alu4>A" Name="split1_C" From="alu16#split1>C" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu16" To="alu16#alu4>B" Name="split2_C" From="alu16#split2>C" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu16" To="alu16#alu4>F" Name="alu3_D" From="alu16#alu3>D" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu16" To="alu16#merge5>A" Name="alu3_R" From="alu16#alu3>R" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu16" To="alu16#merge5>B" Name="alu4_R" From="alu16#alu4>R" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu16" To="alu16>result" Name="merge5_C" From="alu16#merge5>C" Datatype="wire" Datasize="16"/>
+ <Wire Parent="alu16" To="alu16>cout" Name="alu4_D" From="alu16#alu4>D" Datatype="wire" Datasize="1"/>
+</Module>

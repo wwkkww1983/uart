@@ -1,0 +1,72 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="module" Width="900" Class="module" Comment="" Code="&#xa;&#xa;&#xa;" X="0" Parent="0" Name="alu32" Include="" Color="#fffff0" Y="0" File="Current/alu32.model" Parameters="">
+ <Module Height="112" Type="model" Width="128" Class="alu" Comment="" Code="always @ (A or B or op or F)&#xa;begin&#xa;&#x9;case ( op )&#xa;&#x9;&#x9;3'b000: {D,R}=A&amp;B; //实现与运算&#xa;&#x9;&#x9;3'b001: {D,R}=A|B; //实现或运算&#xa;&#x9;&#x9;3'b010: {D,R}=~A; //实现非运算&#xa;&#x9;&#x9;3'b011: {D,R}=A^B; //实现异或运算&#xa;&#x9;&#x9;3'b100: {D,R}=A+B; //实现不带进位的加运算&#xa;&#x9;&#x9;3'b101: {D,R}=A+B+F; //实现带进位的加运算&#xa;&#x9;&#x9;3'b110: {D,R}=A-B; //实现不带借位的减运算&#xa;&#x9;&#x9;3'b111: {D,R}=A-B-F; //实现带借位的减运算&#xa;&#x9;&#x9;default: {D,R}=A&amp;B; //默认为与运算&#xa;&#x9;endcase&#xa;end&#xa;" X="148.111" Parent="alu32" Name="alu1" Include="" Color="#d3d3d3" Y="66.7496" File="Current/alu.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.15625" Function="" Parent="alu1" Name="A" Connect="" Color="#3cb371" Y="-0.0803571" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.15625" Function="" Parent="alu1" Name="B" Connect="" Color="#00ffff" Y="0.133929" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.15625" Function="" Parent="alu1" Name="F" Connect="" Color="#7fffd4" Y="0.383929" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.84375" Function="" Parent="alu1" Name="R" Connect="" Color="#f0ffff" Y="0.0982143" Datatype="reg" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.84375" Function="" Parent="alu1" Name="D" Connect="" Color="#f5f5dc" Y="0.339286" Datatype="reg" Datasize="1"/>
+  <Port Height="20" Side="bottom" Inout="input" Width="20" X="0.617188" Function="" Parent="alu1" Name="op" Connect="" Color="#ff69b4" Y="0.776786" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Module Height="107" Type="model" Width="125" Class="alu" Comment="" Code="always @ (A or B or op or F)&#xa;begin&#xa;&#x9;case ( op )&#xa;&#x9;&#x9;3'b000: {D,R}=A&amp;B; //实现与运算&#xa;&#x9;&#x9;3'b001: {D,R}=A|B; //实现或运算&#xa;&#x9;&#x9;3'b010: {D,R}=~A; //实现非运算&#xa;&#x9;&#x9;3'b011: {D,R}=A^B; //实现异或运算&#xa;&#x9;&#x9;3'b100: {D,R}=A+B; //实现不带进位的加运算&#xa;&#x9;&#x9;3'b101: {D,R}=A+B+F; //实现带进位的加运算&#xa;&#x9;&#x9;3'b110: {D,R}=A-B; //实现不带借位的减运算&#xa;&#x9;&#x9;3'b111: {D,R}=A-B-F; //实现带借位的减运算&#xa;&#x9;&#x9;default: {D,R}=A&amp;B; //默认为与运算&#xa;&#x9;endcase&#xa;end&#xa;" X="329.317" Parent="alu32" Name="alu2" Include="" Color="#d3d3d3" Y="201.819" File="Current/alu.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.16" Function="" Parent="alu2" Name="A" Connect="" Color="#0000ff" Y="-0.00934579" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.2" Function="" Parent="alu2" Name="B" Connect="" Color="#00ffff" Y="0.168224" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.16" Function="" Parent="alu2" Name="F" Connect="" Color="#7fffd4" Y="0.429907" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.84" Function="" Parent="alu2" Name="R" Connect="" Color="#9400d3" Y="0.0560748" Datatype="reg" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.84" Function="" Parent="alu2" Name="D" Connect="" Color="#b8860b" Y="0.373832" Datatype="reg" Datasize="1"/>
+  <Port Height="20" Side="bottom" Inout="input" Width="20" X="0.616" Function="" Parent="alu2" Name="op" Connect="" Color="#9400d3" Y="0.766355" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Module Height="108" Type="model" Width="122" Class="alu" Comment="" Code="always @ (A or B or op or F)&#xa;begin&#xa;&#x9;case ( op )&#xa;&#x9;&#x9;3'b000: {D,R}=A&amp;B; //实现与运算&#xa;&#x9;&#x9;3'b001: {D,R}=A|B; //实现或运算&#xa;&#x9;&#x9;3'b010: {D,R}=~A; //实现非运算&#xa;&#x9;&#x9;3'b011: {D,R}=A^B; //实现异或运算&#xa;&#x9;&#x9;3'b100: {D,R}=A+B; //实现不带进位的加运算&#xa;&#x9;&#x9;3'b101: {D,R}=A+B+F; //实现带进位的加运算&#xa;&#x9;&#x9;3'b110: {D,R}=A-B; //实现不带借位的减运算&#xa;&#x9;&#x9;3'b111: {D,R}=A-B-F; //实现带借位的减运算&#xa;&#x9;&#x9;default: {D,R}=A&amp;B; //默认为与运算&#xa;&#x9;endcase&#xa;end&#xa;" X="520.342" Parent="alu32" Name="alu3" Include="" Color="#d3d3d3" Y="335.853" File="Current/alu.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.204918" Function="" Parent="alu3" Name="A" Connect="" Color="#00bfff" Y="0.240741" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.163934" Function="" Parent="alu3" Name="B" Connect="" Color="#00ffff" Y="0.518519" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.204918" Function="" Parent="alu3" Name="F" Connect="" Color="#7fffd4" Y="-0.00925926" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.795082" Function="" Parent="alu3" Name="R" Connect="" Color="#ffa07a" Y="0.12037" Datatype="reg" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.836066" Function="" Parent="alu3" Name="D" Connect="" Color="#00ff00" Y="0.712963" Datatype="reg" Datasize="1"/>
+  <Port Height="20" Side="bottom" Inout="input" Width="20" X="0.483607" Function="" Parent="alu3" Name="op" Connect="" Color="#4b0082" Y="0.768519" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Module Height="105" Type="model" Width="126" Class="alu" Comment="" Code="always @ (A or B or op or F)&#xa;begin&#xa;&#x9;case ( op )&#xa;&#x9;&#x9;3'b000: {D,R}=A&amp;B; //实现与运算&#xa;&#x9;&#x9;3'b001: {D,R}=A|B; //实现或运算&#xa;&#x9;&#x9;3'b010: {D,R}=~A; //实现非运算&#xa;&#x9;&#x9;3'b011: {D,R}=A^B; //实现异或运算&#xa;&#x9;&#x9;3'b100: {D,R}=A+B; //实现不带进位的加运算&#xa;&#x9;&#x9;3'b101: {D,R}=A+B+F; //实现带进位的加运算&#xa;&#x9;&#x9;3'b110: {D,R}=A-B; //实现不带借位的减运算&#xa;&#x9;&#x9;3'b111: {D,R}=A-B-F; //实现带借位的减运算&#xa;&#x9;&#x9;default: {D,R}=A&amp;B; //默认为与运算&#xa;&#x9;endcase&#xa;end&#xa;" X="691.173" Parent="alu32" Name="alu4" Include="" Color="#d3d3d3" Y="460" File="Current/alu.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.15873" Function="" Parent="alu4" Name="A" Connect="" Color="#b8860b" Y="0.295238" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.15873" Function="" Parent="alu4" Name="B" Connect="" Color="#00ffff" Y="0.533333" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="bottom" Inout="input" Width="20" X="0.166667" Function="" Parent="alu4" Name="F" Connect="" Color="#7fffd4" Y="0.761905" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.801587" Function="" Parent="alu4" Name="R" Connect="" Color="#2f4f4f" Y="0.142857" Datatype="reg" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.801587" Function="" Parent="alu4" Name="D" Connect="" Color="#dc143c" Y="0.504762" Datatype="reg" Datasize="1"/>
+  <Port Height="20" Side="bottom" Inout="input" Width="20" X="0.579365" Function="" Parent="alu4" Name="op" Connect="" Color="#ffe4c4" Y="0.761905" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="A0" Color="#faebd7" Y="0.0566667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32" Name="B0" Color="#00ffff" Y="0.15" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="A1" Color="#7fffd4" Y="0.368333" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="B1" Color="#dc143c" Y="0.476667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="A2" Color="#006400" Y="0.563333" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="B2" Color="#ffe4c4" Y="0.63" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="A3" Color="#b8860b" Y="0.701667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="B3" Color="#8b008b" Y="0.781667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="top" Inout="input" Width="20" X="0.354444" Function="" Parent="alu32" Name="op" Color="#000000" Y="-0.0416667" Datatype="wire" Datasize="4"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32" Name="F" Color="#8a2be2" Y="0.255" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.972222" Function="" Parent="alu32" Name="R1" Color="#a52a2a" Y="0.121667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu32" Name="R2" Color="#deb887" Y="0.266667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu32" Name="R3" Color="#5f9ea0" Y="0.408333" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.972222" Function="" Parent="alu32" Name="R4" Color="#7fff00" Y="0.57" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.972222" Function="" Parent="alu32" Name="D" Color="#d2691e" Y="0.86" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32" To="alu32#alu1>A" Name="alu32_A0" From="alu32>A0" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu1>B" Name="alu32_B0" From="alu32>B0" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu2>A" Name="alu32_A1" From="alu32>A1" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu2>B" Name="alu32_B1" From="alu32>B1" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu3>A" Name="alu32_A2" From="alu32>A2" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu4>A" Name="alu32_A3" From="alu32>A3" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu3>B" Name="alu32_B2" From="alu32>B2" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu4>B" Name="alu32_B3" From="alu32>B3" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu1>F" Name="alu32_F" From="alu32>F" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32" To="alu32#alu2>F" Name="alu1_D" From="alu32#alu1>D" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32" To="alu32#alu3>F" Name="alu2_D" From="alu32#alu2>D" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32" To="alu32#alu4>F" Name="alu3_D" From="alu32#alu3>D" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32" To="alu32>D" Name="alu4_D" From="alu32#alu4>D" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32" To="alu32>R1" Name="alu1_R" From="alu32#alu1>R" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32>R2" Name="alu2_R" From="alu32#alu2>R" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32>R3" Name="alu3_R" From="alu32#alu3>R" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32>R4" Name="alu4_R" From="alu32#alu4>R" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32" To="alu32#alu1>op" Name="alu32_op" From="alu32>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu32" To="alu32#alu2>op" Name="alu32_op" From="alu32>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu32" To="alu32#alu3>op" Name="alu32_op" From="alu32>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu32" To="alu32#alu4>op" Name="alu32_op" From="alu32>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu32" To="alu32_test>B3" Name="alu32_A2" From="alu32>A2" Datatype="wire" Datasize="8"/>
+</Module>

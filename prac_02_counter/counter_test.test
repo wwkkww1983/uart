@@ -1,0 +1,17 @@
+<!DOCTYPE Robei>
+<Module Color="#d3d3d3" Name="counter_test" Class="module" Comment="" Include="" Type="testbench" Time_Scale="" Parent="0" Height="600" Y="0" File="Current/counter_test.test" Width="900" X="0" Code="initial begin &#xa;&#x9;t_clk = 0;&#xa;&#x9;#400;&#xa;&#x9;$finish;&#xa;end&#xa;always #10 t_clk = ~t_clk;&#xa;&#xa;initial begin&#xa;&#x9;t_nrst = 1;&#xa;&#x9;@( posedge t_clk ) #1;&#xa;&#x9;t_nrst = 0;&#xa;&#x9;@( posedge t_clk ) #1;&#xa;&#x9;t_nrst = 1;&#xa;end&#xa;&#xa;initial begin &#xa;&#x9;t_enable = 0;&#xa;&#x9;@( posedge t_clk ) #1;&#xa;&#x9;t_enable = 1;&#xa;end&#xa;">
+ <Module Parameters="" Color="#d3d3d3" Name="counter1" Class="counter" Comment="" Include="" Type="model" Parent="counter_test" Height="160" Y="227.047" File="Current/counter.model" Width="160" X="305.57" Code="always @(posedge clk or negedge nrst) begin&#xa;&#x9;if(!nrst) begin&#xa;&#x9;&#x9;count &lt;= 4'h0;&#xa;&#x9;end&#xa;&#x9;else if(enable) begin&#xa;&#x9;&#x9;if( &amp;count ) begin &#xa;&#x9;&#x9;&#x9;count &lt;= 4'h0;&#xa;&#x9;&#x9;end&#xa;&#x9;&#x9;else begin &#xa;&#x9;&#x9;&#x9;count &lt;= count +1'b1;&#xa;&#x9;&#x9;end &#xa;&#x9;end&#xa;end&#xa;&#xa;&#xa;">
+  <Port Datatype="wire" Color="#faebd7" Name="clk" Inout="input" Function="" Parent="counter1" Height="20" Y="0.1375" Width="20" Connect="" Side="left" X="-0.125" Datasize="1"/>
+  <Port Datatype="wire" Color="#00ffff" Name="nrst" Inout="input" Function="" Parent="counter1" Height="20" Y="0.3375" Width="20" Connect="" Side="left" X="-0.125" Datasize="1"/>
+  <Port Datatype="wire" Color="#7fffd4" Name="enable" Inout="input" Function="" Parent="counter1" Height="20" Y="0.5375" Width="20" Connect="" Side="left" X="-0.125" Datasize="1"/>
+  <Port Datatype="reg" Color="#f0ffff" Name="count" Inout="output" Function="" Parent="counter1" Height="20" Y="0.26875" Width="20" Connect="" Side="right" X="0.875" Datasize="4"/>
+ </Module>
+ <Port Datatype="reg" Color="#faebd7" Name="t_clk" Inout="input" Function="" Parent="counter_test" Height="20" Y="0.183333" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="reg" Color="#00ffff" Name="t_nrst" Inout="input" Function="" Parent="counter_test" Height="20" Y="0.383333" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="reg" Color="#7fffd4" Name="t_enable" Inout="input" Function="" Parent="counter_test" Height="20" Y="0.583333" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="wire" Color="#f0ffff" Name="t_count" Inout="output" Function="" Parent="counter_test" Height="20" Y="0.316667" Width="20" Side="right" X="0.977778" Datasize="4"/>
+ <Wire Datatype="wire" Name="counter_test_p0" From="counter_test>t_clk" To="counter_test#counter1>clk" Parent="counter_test" Datasize="1"/>
+ <Wire Datatype="wire" Name="counter_test_p1" From="counter_test>t_nrst" To="counter_test#counter1>nrst" Parent="counter_test" Datasize="1"/>
+ <Wire Datatype="wire" Name="counter_test_p2" From="counter_test>t_enable" To="counter_test#counter1>enable" Parent="counter_test" Datasize="1"/>
+ <Wire Datatype="wire" Name="counter1_count" From="counter_test>t_count" To="counter_test#counter1>count" Parent="counter_test" Datasize="4"/>
+</Module>

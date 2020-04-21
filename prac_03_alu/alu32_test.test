@@ -1,0 +1,50 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="testbench" Width="900" Class="module" Comment="" Code="&#xa;&#xa;&#xa;" X="0" Time_Scale="" Parent="0" Name="alu32_test" Include="" Color="#d3d3d3" Y="0" File="Current/alu32_test.test">
+ <Module Height="317" Type="model" Width="366" Class="alu32" Comment="" Code="&#xa;&#xa;&#xa;" X="285.534" Parent="alu32_test" Name="alu321" Include="" Color="#fffff0" Y="76.7554" File="Current/alu32.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="A0" Connect="" Color="#faebd7" Y="0.0378549" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="B0" Connect="" Color="#00ffff" Y="0.157729" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="A1" Connect="" Color="#7fffd4" Y="0.252366" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="B1" Connect="" Color="#dc143c" Y="0.369085" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="A2" Connect="" Color="#006400" Y="0.498423" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="B2" Connect="" Color="#ffe4c4" Y="0.605678" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="A3" Connect="" Color="#b8860b" Y="0.681388" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="B3" Connect="" Color="#8b008b" Y="0.776025" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.068306" Function="" Parent="alu321" Name="op" Connect="" Color="#000000" Y="0.84858" Datatype="wire" Datasize="4"/>
+  <Port Height="20" Side="bottom" Inout="input" Width="20" X="0.180328" Function="" Parent="alu321" Name="F" Connect="" Color="#8a2be2" Y="0.921136" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.945355" Function="" Parent="alu321" Name="R1" Connect="" Color="#a52a2a" Y="0.0599369" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.945355" Function="" Parent="alu321" Name="R2" Connect="" Color="#deb887" Y="0.132492" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.945355" Function="" Parent="alu321" Name="R3" Connect="" Color="#5f9ea0" Y="0.205047" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.945355" Function="" Parent="alu321" Name="R4" Connect="" Color="#7fff00" Y="0.287066" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.931694" Function="" Parent="alu321" Name="D" Connect="" Color="#d2691e" Y="0.817035" Datatype="wire" Datasize="1"/>
+ </Module>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="A0" Color="#faebd7" Y="0.0666667" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="B0" Color="#00ffff" Y="0.15" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="A1" Color="#7fffd4" Y="0.233333" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="B1" Color="#dc143c" Y="0.316667" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="A2" Color="#006400" Y="0.4" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="B2" Color="#ffe4c4" Y="0.483333" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="A3" Color="#b8860b" Y="0.566667" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0277778" Function="" Parent="alu32_test" Name="B3" Color="#8b008b" Y="0.653333" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="op" Color="#000000" Y="0.733333" Datatype="reg" Datasize="4"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu32_test" Name="F" Color="#8a2be2" Y="0.816667" Datatype="reg" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu32_test" Name="R1" Color="#a52a2a" Y="0.125" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu32_test" Name="R2" Color="#deb887" Y="0.266667" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu32_test" Name="R3" Color="#5f9ea0" Y="0.408333" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu32_test" Name="R4" Color="#7fff00" Y="0.55" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu32_test" Name="D" Color="#d2691e" Y="0.691667" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>A0" Name="alu32_test_A0" From="alu32_test>A0" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>B0" Name="alu32_test_B0" From="alu32_test>B0" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>A1" Name="alu32_test_A1" From="alu32_test>A1" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>B1" Name="alu32_test_B1" From="alu32_test>B1" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>A2" Name="alu32_test_A2" From="alu32_test>A2" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>B2" Name="alu32_test_B2" From="alu32_test>B2" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>A3" Name="alu32_test_A3" From="alu32_test>A3" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>B3" Name="alu32_test_B3" From="alu32_test>B3" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>F" Name="alu32_test_F" From="alu32_test>F" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32_test" To="alu32_test>R1" Name="alu321_R1" From="alu32_test#alu321>R1" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test>R2" Name="alu321_R2" From="alu32_test#alu321>R2" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test>R3" Name="alu321_R3" From="alu32_test#alu321>R3" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test>R4" Name="alu321_R4" From="alu32_test#alu321>R4" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu32_test" To="alu32_test>D" Name="alu321_D" From="alu32_test#alu321>D" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu32_test" To="alu32_test#alu321>op" Name="alu32_test_op" From="alu32_test>op" Datatype="wire" Datasize="4"/>
+</Module>

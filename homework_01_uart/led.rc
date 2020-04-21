@@ -1,0 +1,81 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 2445 77 1296 705 100 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_01_uart\led_test.vcd" "F:\Robei\practice\homework_01_uart\led_test.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 411.000000
+cursor 0.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 8
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "F:\Robei\practice\homework_01_uart\led_test.vcd.fsdb"
+addSignal -h 15 /led_test/clk
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_in[8:0]
+addSignal -h 15 -holdScope display_en
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope t_led0[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope t_led1[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope t_led2[3:0]
+addSignal -h 15 -holdScope t_led_done
+addGroup "G2"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_01_uart\led_test.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/led_test"
+
+SCOPE_LIST_BEGIN
+"/led_test"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

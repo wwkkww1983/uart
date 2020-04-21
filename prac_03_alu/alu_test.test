@@ -1,0 +1,23 @@
+<!DOCTYPE Robei>
+<Module Height="600" Type="testbench" Width="900" Class="module" Comment="" Code="initial begin&#xa;&#x9;a=0;&#xa;&#x9;b=0;&#xa;&#x9;op=0;&#xa;&#x9;cin=0;&#xa;&#x9;#1&#xa;&#x9;a=3;&#xa;&#x9;b=1;&#xa;&#x9;op=0;&#xa;&#x9;#1&#xa;&#x9;a=2;&#xa;&#x9;b=1;&#xa;&#x9;op=1;&#xa;&#x9;#1&#xa;&#x9;a=255;&#xa;&#x9;b=0;&#xa;&#x9;op=2;&#xa;&#x9;#1&#xa;&#x9;a=5;&#xa;&#x9;b=6;&#xa;&#x9;op=3;&#xa;&#x9;#1&#xa;&#x9;a=128;&#xa;&#x9;b=128;&#xa;&#x9;op=4;&#xa;&#x9;#1&#xa;&#x9;a=4;&#xa;&#x9;b=5;&#xa;&#x9;cin=1;&#xa;&#x9;op=5;&#xa;&#x9;#1&#xa;&#x9;a=4;&#xa;&#x9;b=5;&#xa;&#x9;op=6;&#xa;&#x9;#1&#xa;&#x9;a=4;&#xa;&#x9;b=5;&#xa;&#x9;op=7;&#xa;&#x9;#1&#xa;&#x9;a=4;&#xa;&#x9;b=5;&#xa;&#x9;op=0;&#xa;&#x9;#1&#xa;&#x9;$finish;&#xa;end&#xa;" X="0" Time_Scale="" Parent="0" Name="alu_test" Include="" Color="#d3d3d3" Y="0" File="Current/alu_test.test">
+ <Module Height="160" Type="model" Width="160" Class="alu" Comment="" Code="always @(*) begin&#xa;&#x9;case(op)&#xa;&#x9;&#x9;3'b000: {D,R} = A + B; //add without carry&#xa;&#x9;&#x9;3'b001: {D,R} = A - B; //subtract without carry&#xa;&#x9;&#x9;3'b010: {D,R} = A + B + F; //add with carry&#xa;&#x9;&#x9;3'b011: {D,R} = A - B -F; //subtract with carry&#xa;&#x9;&#x9;3'b100: {D,R} = A &amp; B; //and &#xa;&#x9;&#x9;3'b101: {D,R} = A | B; //or&#xa;&#x9;&#x9;3'b110: {D,R} = ~A; //no&#xa;&#x9;&#x9;3'b111: {D,R} = A ^ B; //xor&#xa;&#x9;endcase&#xa;end&#xa;&#xa;&#xa;" X="416" Parent="alu_test" Name="alu1" Include="" Color="#d3d3d3" Y="259" File="Current/alu.model" Parameters="">
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu1" Name="A" Connect="" Color="#faebd7" Y="0.1" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu1" Name="B" Connect="" Color="#00ffff" Y="0.2625" Datatype="wire" Datasize="8"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu1" Name="F" Connect="" Color="#7fffd4" Y="0.5875" Datatype="wire" Datasize="1"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.875" Function="" Parent="alu1" Name="R" Connect="" Color="#f0ffff" Y="0.1875" Datatype="reg" Datasize="8"/>
+  <Port Height="20" Side="right" Inout="output" Width="20" X="0.875" Function="" Parent="alu1" Name="D" Connect="" Color="#f5f5dc" Y="0.4375" Datatype="reg" Datasize="1"/>
+  <Port Height="20" Side="left" Inout="input" Width="20" X="-0.125" Function="" Parent="alu1" Name="op" Connect="" Color="#ffe4c4" Y="0.425" Datatype="wire" Datasize="4"/>
+ </Module>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu_test" Name="a" Color="#faebd7" Y="0.15" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu_test" Name="b" Color="#00ffff" Y="0.316667" Datatype="reg" Datasize="8"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu_test" Name="cin" Color="#7fffd4" Y="0.65" Datatype="reg" Datasize="1"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu_test" Name="result" Color="#00ffff" Y="0.233333" Datatype="wire" Datasize="8"/>
+ <Port Height="20" Side="right" Inout="output" Width="20" X="0.977778" Function="" Parent="alu_test" Name="cout" Color="#ffe4c4" Y="0.483333" Datatype="wire" Datasize="1"/>
+ <Port Height="20" Side="left" Inout="input" Width="20" X="-0.0222222" Function="" Parent="alu_test" Name="op" Color="#0000ff" Y="0.483333" Datatype="reg" Datasize="4"/>
+ <Wire Parent="alu_test" To="alu_test#alu1>B" Name="alu_test_t_B" From="alu_test>b" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu_test" To="alu_test#alu1>F" Name="alu_test_t_F" From="alu_test>cin" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu_test" To="alu_test#alu1>op" Name="alu_test_t_op" From="alu_test>op" Datatype="wire" Datasize="4"/>
+ <Wire Parent="alu_test" To="alu_test>result" Name="alu1_R" From="alu_test#alu1>R" Datatype="wire" Datasize="8"/>
+ <Wire Parent="alu_test" To="alu_test>cout" Name="alu1_D" From="alu_test#alu1>D" Datatype="wire" Datasize="1"/>
+ <Wire Parent="alu_test" To="alu_test#alu1>A" Name="alu_test_a" From="alu_test>a" Datatype="wire" Datasize="8"/>
+</Module>

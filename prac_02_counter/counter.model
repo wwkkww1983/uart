@@ -1,0 +1,7 @@
+<!DOCTYPE Robei>
+<Module Parameters="" Color="#d3d3d3" Name="counter" Class="module" Comment="" Include="" Type="module" Parent="0" Height="600" Y="0" File="Current/counter.model" Width="900" X="0" Code="always @(posedge clk or negedge nrst) begin&#xa;&#x9;if(!nrst) begin&#xa;&#x9;&#x9;count &lt;= 4'h0;&#xa;&#x9;end&#xa;&#x9;else if(enable) begin&#xa;&#x9;&#x9;if( &amp;count ) begin &#xa;&#x9;&#x9;&#x9;count &lt;= 4'h0;&#xa;&#x9;&#x9;end&#xa;&#x9;&#x9;else begin &#xa;&#x9;&#x9;&#x9;count &lt;= count +1'b1;&#xa;&#x9;&#x9;end &#xa;&#x9;end&#xa;end&#xa;">
+ <Port Datatype="wire" Color="#faebd7" Name="clk" Inout="input" Function="" Parent="counter" Height="20" Y="0.183333" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="wire" Color="#00ffff" Name="nrst" Inout="input" Function="" Parent="counter" Height="20" Y="0.383333" Width="20" Side="left" X="-0.0222222" Datasize="1"/>
+ <Port Datatype="wire" Color="#7fffd4" Name="enable" Inout="input" Function="" Parent="counter" Height="20" Y="0.59" Width="20" Side="left" X="-0.0277778" Datasize="1"/>
+ <Port Datatype="reg" Color="#f0ffff" Name="count" Inout="output" Function="" Parent="counter" Height="20" Y="0.323333" Width="20" Side="right" X="0.972222" Datasize="4"/>
+</Module>
