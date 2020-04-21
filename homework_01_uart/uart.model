@@ -3,8 +3,8 @@
  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.125" Name="clk" Width="20" Color="#00ffff" Parent="uart" X="-0.0222222" Inout="input"/>
  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.266667" Name="rst_n" Width="20" Color="#7fffd4" Parent="uart" X="-0.0222222" Inout="input"/>
  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.406667" Name="rx" Width="20" Color="#0000ff" Parent="uart" X="-0.0222222" Inout="input"/>
- <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.568333" Name="tx_en" Width="20" Color="#8a2be2" Parent="uart" X="-0.0277778" Inout="input"/>
- <Port Datasize="8" Datatype="wire" Height="20" Function="" Side="left" Y="0.701667" Name="data_send" Width="20" Color="#a52a2a" Parent="uart" X="-0.0277778" Inout="input"/>
+ <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.566667" Name="tx_en" Width="20" Color="#8a2be2" Parent="uart" X="-0.0222222" Inout="input"/>
+ <Port Datasize="8" Datatype="wire" Height="20" Function="" Side="left" Y="0.701667" Name="data_send" Width="20" Color="#a52a2a" Parent="uart" X="-0.0222222" Inout="input"/>
  <Port Datasize="1" Datatype="reg" Height="20" Function="" Side="right" Y="0.15" Name="tx_buf_full" Width="20" Color="#5f9ea0" Parent="uart" X="0.977778" Inout="output"/>
  <Port Datasize="1" Datatype="reg" Height="20" Function="" Side="right" Y="0.316667" Name="rx_buf_full" Width="20" Color="#b8860b" Parent="uart" X="0.977778" Inout="output"/>
  <Port Datasize="1" Datatype="reg" Height="20" Function="" Side="right" Y="0.481667" Name="tx" Width="20" Color="#7fff00" Parent="uart" X="0.977778" Inout="output"/>

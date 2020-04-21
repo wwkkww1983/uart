@@ -1,5 +1,0 @@
-`include "F:/Robei/practice/homework_01_uart/verilog/key.v"
-`include "F:/Robei/practice/homework_01_uart/verilog/key_uart.v"
-`include "F:/Robei/practice/homework_01_uart/verilog/key_uart_test.v"
-`include "F:/Robei/practice/homework_01_uart/verilog/uart.v"
-

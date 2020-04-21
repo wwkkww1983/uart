@@ -1,5 +1,6 @@
-`include "F:/Robei/practice/homework_01_uart/verilog/key.v"
-`include "F:/Robei/practice/homework_01_uart/verilog/key_uart.v"
-`include "F:/Robei/practice/homework_01_uart/verilog/key_uart_test.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/bin_bcd.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/led.v"
 `include "F:/Robei/practice/homework_01_uart/verilog/uart.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/uart_led.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/uart_led_test.v"
 

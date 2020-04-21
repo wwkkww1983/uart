@@ -12,10 +12,10 @@
  </Module>
  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.15" Name="clk" Width="20" Color="#0000ff" Parent="led" X="-0.0222222" Inout="input"/>
  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.316667" Name="rst_n" Width="20" Color="#00ffff" Parent="led" X="-0.0222222" Inout="input"/>
- <Port Datasize="9" Datatype="wire" Height="20" Function="" Side="left" Y="0.481667" Name="data_in" Width="20" Color="#8a2be2" Parent="led" X="-0.0222222" Inout="input"/>
+ <Port Datasize="9" Datatype="wire" Height="20" Function="" Side="left" Y="0.483333" Name="data_in" Width="20" Color="#8a2be2" Parent="led" X="-0.0222222" Inout="input"/>
  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.65" Name="display_en" Width="20" Color="#a52a2a" Parent="led" X="-0.0222222" Inout="input"/>
  <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.65" Name="led0" Width="20" Color="#00bfff" Parent="led" X="0.977778" Inout="output"/>
- <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.481667" Name="led1" Width="20" Color="#006400" Parent="led" X="0.977778" Inout="output"/>
+ <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.483333" Name="led1" Width="20" Color="#006400" Parent="led" X="0.977778" Inout="output"/>
  <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.316667" Name="led2" Width="20" Color="#b8860b" Parent="led" X="0.977778" Inout="output"/>
  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="right" Y="0.15" Name="led_done" Width="20" Color="#9932cc" Parent="led" X="0.977778" Inout="output"/>
  <Wire Datasize="1" From="led>clk" Datatype="wire" Name="led_clk" Parent="led" To="led#bin_bcd1>clk"/>

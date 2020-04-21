@@ -1,0 +1,8 @@
+<!DOCTYPE Robei>
+<Module Code="&#xa;&#xa;&#xa;" Include="" Parameters="" Height="600" Class="module" Y="0" Name="division_duty" Type="module" Width="900" File="Current/division_duty.model" Color="#d3d3d3" Comment="" Parent="0" X="0">
+ <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.183333" Name="clk" Width="20" Color="#0000ff" Parent="division_duty" X="-0.0222222" Inout="input"/>
+ <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.383333" Name="rst_n" Width="20" Color="#00ffff" Parent="division_duty" X="-0.0222222" Inout="input"/>
+ <Port Datasize="9" Datatype="wire" Height="20" Function="" Side="left" Y="0.583333" Name="division" Width="20" Color="#008b8b" Parent="division_duty" X="-0.0222222" Inout="input"/>
+ <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="right" Y="0.483333" Name="clk_out" Width="20" Color="#a52a2a" Parent="division_duty" X="0.977778" Inout="output"/>
+ <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="left" Y="0.766667" Name="duty" Width="20" Color="#ffe4c4" Parent="division_duty" X="-0.0222222" Inout="input"/>
+</Module>

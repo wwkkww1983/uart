@@ -1,0 +1,26 @@
+<!DOCTYPE Robei>
+<Module Code="//&#xa;// Gebnerate clock&#xa;//&#xa;initial begin&#xa;  clk = 0;&#xa;end&#xa;always #10 clk = ~clk;&#xa;&#xa;//&#xa;// Generate other input signals&#xa;//&#xa;initial begin &#xa;  rx = 1;&#xa;  repeat(10)@( posedge clk ) #1; &#xa;  //&#xa;  // receive data, data is 1_1001_1011_0( 155 )&#xa;  //&#xa;  repeat(32)@( posedge clk ) #1;&#xa;  rx = 0;  // Start signal&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 1;  // Least significant signal&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 1;&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 0;&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 1;&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 1;&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 0;&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 0;&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 1;  // Most significant signal&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 1;  // Parity check&#xa;  repeat(16)@( posedge clk ) #1;&#xa;  rx = 1;  // Stop bit   &#xa;  repeat(64)@( posedge clk ) #1;&#xa;  $finish;&#xa;end&#xa;&#xa;&#xa;" Include="" Height="600" Time_Scale="" Class="module" Y="0" Name="uart_led_test" Type="testbench" Width="900" File="Current/uart_led_test.test" Color="#d3d3d3" Comment="" Parent="0" X="0">
+ <Module Code="&#xa;" Include="" Parameters="" Height="239" Class="uart_led" Y="137.905" Name="uart_led1" Type="model" Width="302" File="Current/uart_led.model" Color="#d3d3d3" Comment="" Parent="uart_led_test" X="234.649">
+  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.154812" Name="clk" Width="20" Color="#0000ff" Parent="uart_led1" X="-0.0662252" Connect="" Inout="input"/>
+  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.351464" Name="rst_n" Width="20" Color="#00ffff" Parent="uart_led1" X="-0.0662252" Connect="" Inout="input"/>
+  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="left" Y="0.548117" Name="rx" Width="20" Color="#7fffd4" Parent="uart_led1" X="-0.0662252" Connect="" Inout="input"/>
+  <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="right" Y="0.121339" Name="u_led_valid" Width="20" Color="#a52a2a" Parent="uart_led1" X="0.933775" Connect="" Inout="output"/>
+  <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.284519" Name="u_led0" Width="20" Color="#8a2be2" Parent="uart_led1" X="0.933775" Connect="" Inout="output"/>
+  <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.447699" Name="u_led1" Width="20" Color="#ff7f50" Parent="uart_led1" X="0.933775" Connect="" Inout="output"/>
+  <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.610879" Name="u_led2" Width="20" Color="#b8860b" Parent="uart_led1" X="0.933775" Connect="" Inout="output"/>
+ </Module>
+ <Port Datasize="1" Datatype="reg" Height="20" Function="" Side="left" Y="0.183333" Name="clk" Width="20" Color="#0000ff" Parent="uart_led_test" X="-0.0222222" Inout="input"/>
+ <Port Datasize="1" Datatype="reg" Height="20" Function="" Side="left" Y="0.383333" Name="rst_n" Width="20" Color="#00ffff" Parent="uart_led_test" X="-0.0222222" Inout="input"/>
+ <Port Datasize="1" Datatype="reg" Height="20" Function="" Side="left" Y="0.583333" Name="rx" Width="20" Color="#7fffd4" Parent="uart_led_test" X="-0.0222222" Inout="input"/>
+ <Port Datasize="1" Datatype="wire" Height="20" Function="" Side="right" Y="0.15" Name="t_led_valid" Width="20" Color="#a52a2a" Parent="uart_led_test" X="0.977778" Inout="output"/>
+ <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.316667" Name="t_led0" Width="20" Color="#8a2be2" Parent="uart_led_test" X="0.977778" Inout="output"/>
+ <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.483333" Name="t_led1" Width="20" Color="#ff7f50" Parent="uart_led_test" X="0.977778" Inout="output"/>
+ <Port Datasize="4" Datatype="wire" Height="20" Function="" Side="right" Y="0.65" Name="t_led2" Width="20" Color="#b8860b" Parent="uart_led_test" X="0.977778" Inout="output"/>
+ <Wire Datasize="1" From="uart_led_test>clk" Datatype="wire" Name="uart_led_test_clk" Parent="uart_led_test" To="uart_led_test#uart_led1>clk"/>
+ <Wire Datasize="1" From="uart_led_test>rst_n" Datatype="wire" Name="uart_led_test_rst_n" Parent="uart_led_test" To="uart_led_test#uart_led1>rst_n"/>
+ <Wire Datasize="1" From="uart_led_test>rx" Datatype="wire" Name="uart_led_test_rx" Parent="uart_led_test" To="uart_led_test#uart_led1>rx"/>
+ <Wire Datasize="1" From="uart_led_test#uart_led1>u_led_valid" Datatype="wire" Name="uart_led1_u_led_valid" Parent="uart_led_test" To="uart_led_test>t_led_valid"/>
+ <Wire Datasize="4" From="uart_led_test#uart_led1>u_led0" Datatype="wire" Name="uart_led1_u_led0" Parent="uart_led_test" To="uart_led_test>t_led0"/>
+ <Wire Datasize="4" From="uart_led_test#uart_led1>u_led1" Datatype="wire" Name="uart_led1_u_led1" Parent="uart_led_test" To="uart_led_test>t_led1"/>
+ <Wire Datasize="4" From="uart_led_test#uart_led1>u_led2" Datatype="wire" Name="uart_led1_u_led2" Parent="uart_led_test" To="uart_led_test>t_led2"/>
+</Module>
