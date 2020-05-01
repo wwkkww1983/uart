@@ -52,6 +52,20 @@ module bin_bcd(
 	  SHIFT     = 3'b010,
 	  DONE      = 3'b100;
 	
+	reg     tran_en_q;
+	wire    tran_en_flag;
+	
+	always @( posedge clk or negedge rst_n ) begin
+	  if( ~rst_n ) begin
+	    tran_en_q <= #`DEL 1'b0;
+	  end
+	  else begin
+	    tran_en_q <= #`DEL tran_en;
+	  end
+	end
+	assign tran_en_flag = tran_en_q && ( ~tran_en );
+	
+	
 	//
 	// FSM step1
 	//
@@ -71,7 +85,7 @@ module bin_bcd(
 	  ns = IDLE;
 	  case ( cs )
 	    IDLE : begin
-	      if ( tran_en ) begin
+	      if ( tran_en_flag ) begin
 	        ns = SHIFT;
 	      end
 	      else begin

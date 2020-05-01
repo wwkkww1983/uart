@@ -69,7 +69,7 @@ module uart(
 	  end
 	  //
 	  // Count disable
-	  else if( rx_cnt == 8'd168 ) begin
+	  else if( rx_cnt == 8'd171 ) begin
 	    rx_cnt_en <= #`DEL 1'b0;
 	  end
 	end     
@@ -89,57 +89,70 @@ module uart(
 	  end
 	end
 	
+	reg [8:0] data_received_temp;
 	//
 	// FSM
 	//
 	always @( posedge clk or negedge rst_n ) begin
 	  if( ~rst_n ) begin
-	    data_received <= #`DEL 9'b0;
-	    rx_buf_full   <= #`DEL 1'b0;
+	    data_received_temp <= #`DEL 9'b0;
+	    rx_buf_full        <= #`DEL 1'b0;
 	  end
 	  else if( rx_cnt_en ) begin
 	    case( rx_cnt ) 
 	      8'd24: begin
-	        data_received[0] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[0] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end  // Least significant bit
 	      8'd40: begin
-	        data_received[1] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[1] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end
 	      8'd56: begin
-	        data_received[2] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[2] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end
 	      8'd72: begin
-	        data_received[3] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[3] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end
 	      8'd88: begin
-	        data_received[4] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[4] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end
 	      8'd104: begin
-	        data_received[5] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[5] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end
 	      8'd120: begin
-	        data_received[6] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[6] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end
 	      8'd136: begin
-	        data_received[7] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[7] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end  // Most significant bit
 	      8'd152: begin
-	        data_received[8] <= #`DEL rx;
-	        rx_buf_full      <= #`DEL 1'b0;
+	        data_received_temp[8] <= #`DEL rx;
+	        rx_buf_full           <= #`DEL 1'b0;
 	      end  // Parity check
-	      8'd168: begin
-	        rx_buf_full      <= #`DEL 1'b1;
+	      8'd170: begin
+	        rx_buf_full           <= #`DEL 1'b1;
 	      end  // Stop bit
+	      default:begin
+	        rx_buf_full           <= #`DEL 1'b0;
+	      end
 	    endcase
 	  end// Least significant bit
+	end    
+	
+	always @( posedge clk or negedge rst_n ) begin
+	  if( ~rst_n ) begin
+	    data_received <= #`DEL 9'b0;
+	  end
+	  else if( rx_cnt == 8'd168 ) begin
+	    data_received <= #`DEL data_received_temp;  // Ensure data can be collected
+	  end
 	end      
 	
 	//

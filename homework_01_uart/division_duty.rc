@@ -1,0 +1,126 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 1989 127 1548 687 189 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_01_uart\division_duty_test.vcd" "F:\Robei\practice\homework_01_uart\division_duty_test.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+windowTimeUnit 10s
+
+; waveform viewport range
+zoom 0.000000 5739.100000 10
+cursor 3169.100000
+marker 3591.100000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 22
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "F:\Robei\practice\homework_01_uart\division_duty_test.vcd.fsdb"
+addSignal -h 15 /division_duty_test/clk
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -holdScope clk_out
+addSignal -h 15 /division_duty_test/division_duty1/rst_n
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt_even[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope division_even[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope division_odd[7:0]
+addSignal -c ID_RED6 -ls solid -lw 1 -h 15 -UNSIGNED -UDEC -holdScope cnt_p[7:0]
+addSignal -c ID_RED6 -ls solid -lw 1 -h 15 -UNSIGNED -UDEC -holdScope cnt_n[7:0]
+addSignal -c ID_RED6 -ls solid -lw 1 -h 15 -holdScope clk_p
+addSignal -c ID_RED6 -ls solid -lw 1 -h 15 -holdScope clk_n
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 15 -holdScope clk_odd
+addSignal -h 15 -holdScope clk_even
+addSignal -c ID_PURPLE6 -ls solid -lw 1 -h 15 -holdScope clk_out_div
+addSignal -h 15 -holdScope cnt_div_duty
+addSignal -h 15 -holdScope clk
+addSignal -h 15 /division_duty_test/data_en
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_in[8:0]
+addSignal -h 15 -UNSIGNED -UDEC /division_duty_test/division_duty1/division[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope duty_num[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt_duty[7:0]
+addSignal -h 15 -holdScope cnt_duty_flag
+addSignal -c ID_PURPLE6 -ls solid -lw 1 -h 15 -holdScope clk_out_div
+addSignal -c ID_PURPLE6 -ls solid -lw 1 -h 15 -holdScope clk_out_duty
+addSignal -h 15 -holdScope clk_out
+addGroup "G2" -e FALSE
+addSignal -h 15 /division_duty_test/division_duty1/clk
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -holdScope clk_even
+addSignal -h 15 -holdScope clk_n
+addSignal -h 15 -holdScope clk_odd
+addSignal -h 15 -holdScope clk_out
+addSignal -h 15 -holdScope clk_out_div
+addSignal -h 15 -holdScope clk_out_duty
+addSignal -h 15 -holdScope clk_p
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt_duty[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt_even[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt_n[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt_p[7:0]
+addSignal -h 15 -holdScope data_en
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_in[8:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope division[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope division_even[7:0]
+addSignal -h 15 -holdScope division_flag
+addSignal -h 15 -UNSIGNED -UDEC -holdScope division_odd[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope division_temp[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope duty_num[7:0]
+addSignal -h 15 -holdScope duty_num_flag
+addSignal -h 15 -UNSIGNED -HEX -holdScope duty_num_temp[7:0]
+addGroup "G3"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_01_uart\division_duty_test.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm open
+
+"/division_duty_test"
+"/division_duty_test/division_duty1"
+
+SCOPE_LIST_BEGIN
+"/division_duty_test"
+"/division_duty_test/division_duty1"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

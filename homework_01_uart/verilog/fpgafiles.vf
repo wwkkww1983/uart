@@ -1,6 +1,10 @@
 `include "F:/Robei/practice/homework_01_uart/verilog/bin_bcd.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/countdown.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/division_duty.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/key.v"
 `include "F:/Robei/practice/homework_01_uart/verilog/led.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/orgate.v"
 `include "F:/Robei/practice/homework_01_uart/verilog/uart.v"
-`include "F:/Robei/practice/homework_01_uart/verilog/uart_led.v"
-`include "F:/Robei/practice/homework_01_uart/verilog/uart_led_test.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/uart_top.v"
+`include "F:/Robei/practice/homework_01_uart/verilog/uart_top_test.v"
 

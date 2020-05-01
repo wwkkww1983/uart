@@ -2,11 +2,11 @@ Magic 271485
 Revision 5.4v9
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 2444 156 1296 720 178 65
+viewPort -8 -8 1296 705 178 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "F:\Robei\practice\homework_01_uart\key_uart_test.vcd" "F:\Robei\practice\homework_01_uart\key_uart_test.vcd.fsdb"
+openDirFile -d / -i 0 "" "F:\Robei\practice\homework_01_uart\key_uart_test.vcd.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,12 +16,10 @@ signalSpacing 3
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 39999726.870043 40000270.163426
-cursor 60000011.000000
+zoom 39957309.741374 40076586.371779
+cursor 40000051.000000
 marker 0.000000
 
-; user define markers
-; userMarker time_pos marker_name
 ; visible top row signal index
 top 0
 ; marker line index
@@ -99,6 +97,8 @@ getSignalForm close
 
 "/key_uart_test"
 "/key_uart_test/key_uart1"
+"/key_uart_test/key_uart1/key2"
+"/key_uart_test/key_uart1/uart2"
 
 SCOPE_LIST_BEGIN
 "/key_uart_test"
