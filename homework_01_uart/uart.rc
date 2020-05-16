@@ -1,0 +1,102 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 2100 201 1296 705 160 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_01_uart\uart_test.vcd" "F:\Robei\practice\homework_01_uart\uart_test.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 1927.488189 2313.816888
+cursor 2226.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 12
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname uart.cs_rx
+nalias IDLE_RX		4'b0000		NULL
+nalias STOP_RX		4'b0100		NULL
+nalias START_RX		4'b0001		NULL
+nalias RECEIVE_RX		4'b0010		NULL
+nalias ERROR_RX		4'b1000		NULL
+
+aliasmapname uart.cs_tx
+nalias SEND_TX		3'b010		NULL
+nalias IDLE_TX		3'b000		NULL
+nalias STOP_TX		3'b100		NULL
+nalias START_TX		3'b001		NULL
+
+addGroup "G1"
+activeDirFile "" "F:\Robei\practice\homework_01_uart\uart_test.vcd.fsdb"
+addSignal -h 15 /uart_test/clk
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -holdScope rx
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received[8:0]
+addSignal -h 15 -holdScope rx_buf_full
+addGroup "G2"
+addSignal -h 15 /uart_test/uart1/rx
+addSignal -h 15 -holdScope rx_q
+addSignal -h 15 -holdScope rx_start
+addSignal -h 15 -holdScope rx_cnt_en
+addSignal -h 15 -UNSIGNED -UDEC -holdScope rx_cnt[7:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received_temp[8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received[8:0]
+addSignal -h 15 -holdScope rx_buf_full
+addGroup "G3"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_01_uart\uart_test.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm open
+
+"/uart_test"
+"/uart_test/uart1"
+
+SCOPE_LIST_BEGIN
+"/uart_test"
+"/uart_test/uart1"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

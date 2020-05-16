@@ -1,0 +1,147 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 2256 126 1558 709 189 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_02_uart_16550\uart_16550_tb.vcd" "F:\Robei\practice\homework_02_uart_16550\uart_16550_tb.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 8675059.000000
+cursor 16508.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 47
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname uart.cs_rx
+nalias IDLE_RX		4'b0000		NULL
+nalias STOP_RX		4'b0100		NULL
+nalias START_RX		4'b0001		NULL
+nalias RECEIVE_RX		4'b0010		NULL
+nalias ERROR_RX		4'b1000		NULL
+
+aliasmapname uart.cs_tx
+nalias SEND_TX		3'b010		NULL
+nalias IDLE_TX		3'b000		NULL
+nalias STOP_TX		3'b100		NULL
+nalias START_TX		3'b001		NULL
+
+addGroup "uart16550 test"
+activeDirFile "" "F:\Robei\practice\homework_02_uart_16550\uart_16550_tb.vcd.fsdb"
+addSignal -h 15 /uart_16550_tb/uart_165501/generate_clk1/clk_out
+addSignal -h 15 -UNSIGNED -BIN /uart_16550_tb/data_in[7:0]
+addSignal -h 15 -holdScope write_n
+addSignal -h 15 -holdScope empty
+addSignal -h 15 -holdScope tx
+addSignal -h 15 -holdScope tx_buf_full
+addSignal -h 15 -holdScope read_n
+addSignal -h 15 -holdScope rx
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_out[7:0]
+addGroup "sfifo_tx"
+addSignal -h 15 /uart_16550_tb/uart_165501/sfifo_tx/write_n
+addSignal -h 15 -holdScope read_n
+addSignal -h 15 -UNSIGNED -UDEC -holdScope counter[3:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_out[7:0]
+addSignal -h 15 -holdScope empty
+addSignal -h 15 /uart_16550_tb/tx_buf_full
+addSignal -h 15 -UNSIGNED -HEX /uart_16550_tb/uart_165501/sfifo_tx/rd_pointer[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wr_pointer[3:0]
+addGroup "uart" -e FALSE
+addSignal -h 15 /uart_16550_tb/uart_165501/tx_request
+addSignal -h 15 /uart_16550_tb/uart_165501/uart1/tx_start
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_send[7:0]
+aliasname uart.cs_tx
+addSignal -h 15 -UNSIGNED -HEX -holdScope ns_tx[2:0]
+addSignal -h 15 /uart_16550_tb/tx
+addSignal -h 15 -holdScope tx_buf_full
+addGroup "G4"
+addSignal -h 15 /uart_16550_tb/uart_165501/sfifo_rx/clock
+addSignal -h 15 -holdScope write_n
+addSignal -h 15 -UNSIGNED -UDEC -holdScope wr_pointer[3:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_in[7:0]
+addSignal -h 15 -holdScope read_n
+addSignal -h 15 -UNSIGNED -UDEC -holdScope rd_pointer[3:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_out[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope counter[3:0]
+addSignal -h 15 -holdScope empty
+addSignal -h 15 -holdScope full
+addSignal -h 15 -holdScope half
+addGroup "G5"
+addSignal -h 15 /uart_16550_tb/uart_165501/uart1/rx
+addSignal -h 15 -holdScope rx_q
+addSignal -h 15 -holdScope rx_start
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_cnt[7:0]
+aliasname uart.cs_rx
+addSignal -h 15 -UNSIGNED -HEX -holdScope ns_rx[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope count_cycle_rx[3:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received_temp[8:0]
+addSignal -c ID_YELLOW5 -ls solid -lw 1 -h 15 -UNSIGNED -BIN -holdScope data_received_check[8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received[7:0]
+addSignal -h 15 -holdScope rx_buf_full
+addGroup "G6"
+addGroup "G7"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_02_uart_16550\uart_16550_tb.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm open
+
+"/uart_16550_tb"
+"/uart_16550_tb/uart_165501"
+"/uart_16550_tb/uart_165501/generate_clk1"
+"/uart_16550_tb/uart_165501/sfifo_rx"
+"/uart_16550_tb/uart_165501/sfifo_tx"
+"/uart_16550_tb/uart_165501/uart1"
+
+SCOPE_LIST_BEGIN
+"/uart_16550_tb/uart_165501/generate_clk1"
+"/uart_16550_tb/uart_165501"
+"/uart_16550_tb/uart_165501/sfifo_tx"
+"/uart_16550_tb/uart_165501/sfifo_rx"
+"/uart_16550_tb"
+"/uart_16550_tb/uart_165501/uart1"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

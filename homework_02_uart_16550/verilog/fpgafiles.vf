@@ -1,0 +1,8 @@
+`include "F:/Robei/practice/homework_02_uart_16550/uart_def.v"
+`include "F:/Robei/practice/homework_02_uart_16550/verilog/count_uart_16550.v"
+`include "F:/Robei/practice/homework_02_uart_16550/verilog/countdown.v"
+`include "F:/Robei/practice/homework_02_uart_16550/verilog/generate_clk.v"
+`include "F:/Robei/practice/homework_02_uart_16550/verilog/tran_data.v"
+`include "F:/Robei/practice/homework_02_uart_16550/verilog/tran_data_tb.v"
+`include "F:/Robei/practice/homework_02_uart_16550/verilog/uart.v"
+

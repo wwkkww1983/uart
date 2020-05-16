@@ -105,7 +105,7 @@ module countdown(
 	    end
 	  end  
 	  else begin
-	    count      <= #`DEL count;
+	    count      <= #`DEL 8'd0;
 	    count_full <= #`DEL 1'b0;
 	  end
 	end

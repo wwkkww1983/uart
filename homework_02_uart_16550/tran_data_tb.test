@@ -1,0 +1,20 @@
+<!DOCTYPE Robei>
+<Module Name="tran_data_tb" Type="testbench" Width="900" Class="module" Comment="" X="0" Time_Scale="" Y="0" Parent="0" Height="600" Color="#d3d3d3" Include="uart_def.v" File="Current/tran_data_tb.test" Code="initial begin&#xa;  clk = 0;&#xa;end&#xa;always #10 clk = ~clk;&#xa;&#xa;initial begin&#xa;  rst_n = 1;&#xa;  repeat(10) @( posedge clk ) #1;&#xa;  rst_n = 0;&#xa;  repeat(10) @( posedge clk ) #1;&#xa;  rst_n = 1;&#xa;end&#xa;&#xa;initial begin&#xa;  count_enable = 0;&#xa;  repeat( 100 ) @( posedge clk ) #1;&#xa;  count_enable = 1;&#xa;  repeat( 100 ) @( posedge clk ) #1;&#xa;  count_enable = 0;&#xa;  repeat( 16*78*500 ) @( posedge clk ) #1;&#xa;  repeat( 16*78*500 ) @( posedge clk ) #1;&#xa;  repeat( 16*78*200 ) @( posedge clk ) #1;&#xa;  // Test the second send&#xa;  count_enable = 1;&#xa;  repeat( 100 ) @( posedge clk ) #1;&#xa;  count_enable = 0;&#xa;  repeat( 16*78*200 ) @( posedge clk ) #1; &#xa;  $finish;&#xa;end&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;">
+ <Module Name="tran_data1" Type="model" Width="160" Class="tran_data" Comment="" X="323" Parameters="" Y="171" Parent="tran_data_tb" Height="160" Color="#d3d3d3" Include="uart_def.v" File="Current/tran_data.model" Code="wire count_start;&#xa;assign count_start = ~count_enable;  // Input enable signal&#xa;&#xa;wire tx_inv;&#xa;assign tx_done = ~tx_inv;   // Output enable signal&#xa;&#xa;&#xa;">
+  <Port Connect="" Name="clk" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.1375" Datatype="wire" Parent="tran_data1" Height="20" Color="#faebd7" Datasize="1"/>
+  <Port Connect="" Name="rst_n" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.3375" Datatype="wire" Parent="tran_data1" Height="20" Color="#00ffff" Datasize="1"/>
+  <Port Connect="" Name="count_enable" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.5375" Datatype="wire" Parent="tran_data1" Height="20" Color="#7fffd4" Datasize="1"/>
+  <Port Connect="" Name="tx" Inout="output" Function="" Width="20" Side="right" X="0.875" Y="0.1875" Datatype="wire" Parent="tran_data1" Height="20" Color="#f0ffff" Datasize="1"/>
+  <Port Connect="" Name="tx_done" Inout="output" Function="" Width="20" Side="right" X="0.875" Y="0.4375" Datatype="wire" Parent="tran_data1" Height="20" Color="#f5f5dc" Datasize="1"/>
+ </Module>
+ <Port Name="clk" Inout="input" Function="" Width="20" Side="left" X="-0.0222222" Y="0.183333" Datatype="reg" Parent="tran_data_tb" Height="20" Color="#faebd7" Datasize="1"/>
+ <Port Name="rst_n" Inout="input" Function="" Width="20" Side="left" X="-0.0222222" Y="0.383333" Datatype="reg" Parent="tran_data_tb" Height="20" Color="#00ffff" Datasize="1"/>
+ <Port Name="count_enable" Inout="input" Function="" Width="20" Side="left" X="-0.0222222" Y="0.583333" Datatype="reg" Parent="tran_data_tb" Height="20" Color="#7fffd4" Datasize="1"/>
+ <Port Name="tx" Inout="output" Function="" Width="20" Side="right" X="0.977778" Y="0.233333" Datatype="wire" Parent="tran_data_tb" Height="20" Color="#f0ffff" Datasize="1"/>
+ <Port Name="tx_done" Inout="output" Function="" Width="20" Side="right" X="0.977778" Y="0.483333" Datatype="wire" Parent="tran_data_tb" Height="20" Color="#f5f5dc" Datasize="1"/>
+ <Wire Name="tran_data_tb_clk" To="tran_data_tb#tran_data1>clk" From="tran_data_tb>clk" Datatype="wire" Parent="tran_data_tb" Datasize="1"/>
+ <Wire Name="tran_data_tb_rst_n" To="tran_data_tb#tran_data1>rst_n" From="tran_data_tb>rst_n" Datatype="wire" Parent="tran_data_tb" Datasize="1"/>
+ <Wire Name="tran_data_tb_count_enable" To="tran_data_tb#tran_data1>count_enable" From="tran_data_tb>count_enable" Datatype="wire" Parent="tran_data_tb" Datasize="1"/>
+ <Wire Name="tran_data1_tx" To="tran_data_tb>tx" From="tran_data_tb#tran_data1>tx" Datatype="wire" Parent="tran_data_tb" Datasize="1"/>
+ <Wire Name="tran_data1_tx_done" To="tran_data_tb>tx_done" From="tran_data_tb#tran_data1>tx_done" Datatype="wire" Parent="tran_data_tb" Datasize="1"/>
+</Module>

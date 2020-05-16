@@ -1,0 +1,25 @@
+<!DOCTYPE Robei>
+<Module Name="tran_data" Type="module" Width="900" Class="module" Comment="" X="0" Parameters="" Y="0" Parent="0" Height="600" Color="#d3d3d3" Include="" File="Current/tran_data.model" Code="wire count_start;&#xa;assign count_start = ~count_en;  // Input enable signal&#xa;&#xa;wire tx_inv;&#xa;assign tx_doing = ~tx_inv;   // Output enable signal&#xa;&#xa;&#xa;">
+ <Module Name="generate_clk1" Type="model" Width="160" Class="generate_clk" Comment="" X="201.633" Parameters="" Y="97.0801" Parent="tran_data" Height="160" Color="#d3d3d3" Include="" File="Current/generate_clk.model" Code="&#x9;`define DEL 1&#xa;&#x9;&#xa;  //&#xa;&#x9;// Division is 78, which duty is 50% and frequency is 153846Hz&#xa;  // 153846 = 16 * 9600&#xa;&#x9;//&#xa;  reg [6:0] cnt;&#xa;&#xa;  always @( posedge clk or negedge rst_n ) begin&#xa;    if( ~rst_n ) begin&#xa;      cnt     &lt;= #`DEL 7'd0;&#xa;      clk_out &lt;= #`DEL 1'b0;&#xa;    end&#xa;    else if( cnt == 7'd38 ) begin&#xa;      cnt     &lt;= #`DEL cnt + 7'd1;&#xa;      clk_out &lt;= #`DEL 1'b1;&#xa;    end&#xa;    else if( cnt == 7'd77 ) begin&#xa;      cnt     &lt;= #`DEL 7'd0;&#xa;      clk_out &lt;= #`DEL 1'b0;&#xa;    end&#xa;    else begin&#xa;      cnt     &lt;= #`DEL cnt + 7'd1;&#xa;    end&#xa;  end  &#xa;">
+  <Port Connect="" Name="clk" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.1875" Datatype="wire" Parent="generate_clk1" Height="20" Color="#0000ff" Datasize="1"/>
+  <Port Connect="" Name="rst_n" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.4375" Datatype="wire" Parent="generate_clk1" Height="20" Color="#00ffff" Datasize="1"/>
+  <Port Connect="" Name="clk_out" Inout="output" Function="" Width="20" Side="right" X="0.875" Y="0.26875" Datatype="reg" Parent="generate_clk1" Height="20" Color="#dc143c" Datasize="1"/>
+ </Module>
+ <Module Name="countdown_uart3" Type="model" Width="160" Class="countdown_uart" Comment="" X="545.432" Parameters="" Y="264.741" Parent="tran_data" Height="160" Color="#d3d3d3" Include="" File="Current/countdown_uart.model" Code="&#xa;&#xa;&#xa;">
+  <Port Connect="" Name="clk" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.1375" Datatype="wire" Parent="countdown_uart3" Height="20" Color="#0000ff" Datasize="1"/>
+  <Port Connect="" Name="rst_n" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.3375" Datatype="wire" Parent="countdown_uart3" Height="20" Color="#00ffff" Datasize="1"/>
+  <Port Connect="count_start" Name="count_enable" Inout="input" Function="" Width="20" Side="left" X="-0.125" Y="0.5375" Datatype="wire" Parent="countdown_uart3" Height="20" Color="#7fffd4" Datasize="1"/>
+  <Port Connect="tx_inv" Name="tx_valid" Inout="output" Function="" Width="20" Side="right" X="0.875" Y="0.1875" Datatype="wire" Parent="countdown_uart3" Height="20" Color="#b8860b" Datasize="1"/>
+  <Port Connect="" Name="tx" Inout="output" Function="" Width="20" Side="right" X="0.875" Y="0.4375" Datatype="wire" Parent="countdown_uart3" Height="20" Color="#006400" Datasize="1"/>
+ </Module>
+ <Port Name="clk" Inout="input" Function="" Width="20" Side="left" X="-0.0222222" Y="0.181667" Datatype="wire" Parent="tran_data" Height="20" Color="#faebd7" Datasize="1"/>
+ <Port Name="rst_n" Inout="input" Function="" Width="20" Side="left" X="-0.0222222" Y="0.381667" Datatype="wire" Parent="tran_data" Height="20" Color="#00ffff" Datasize="1"/>
+ <Port Name="count_en" Inout="input" Function="" Width="20" Side="left" X="-0.0222222" Y="0.581667" Datatype="wire" Parent="tran_data" Height="20" Color="#7fffd4" Datasize="1"/>
+ <Port Name="tx_doing" Inout="output" Function="" Width="20" Side="right" X="0.977778" Y="0.231667" Datatype="wire" Parent="tran_data" Height="20" Color="#f0ffff" Datasize="1"/>
+ <Port Name="tx" Inout="output" Function="" Width="20" Side="right" X="0.977778" Y="0.481667" Datatype="wire" Parent="tran_data" Height="20" Color="#f5f5dc" Datasize="1"/>
+ <Wire Name="tran_data_clk" To="tran_data#generate_clk1>clk" From="tran_data>clk" Datatype="wire" Parent="tran_data" Datasize="1"/>
+ <Wire Name="tran_data_rst_n" To="tran_data#generate_clk1>rst_n" From="tran_data>rst_n" Datatype="wire" Parent="tran_data" Datasize="1"/>
+ <Wire Name="generate_clk1_clk_out" To="tran_data#countdown_uart3>clk" From="tran_data#generate_clk1>clk_out" Datatype="wire" Parent="tran_data" Datasize="1"/>
+ <Wire Name="tran_data_rst_n" To="tran_data#countdown_uart3>rst_n" From="tran_data>rst_n" Datatype="wire" Parent="tran_data" Datasize="1"/>
+ <Wire Name="countdown_uart3_tx" To="tran_data>tx" From="tran_data#countdown_uart3>tx" Datatype="wire" Parent="tran_data" Datasize="1"/>
+</Module>

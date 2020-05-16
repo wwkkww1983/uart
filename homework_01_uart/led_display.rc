@@ -1,0 +1,79 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 2395 96 1296 705 152 42
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_01_uart\led_display_test.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 198251.000000
+cursor 55251.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 6
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "F:\Robei\practice\homework_01_uart\led_display_test.vcd.fsdb"
+addSignal -h 15 /led_display_test/clk
+addSignal -h 15 -UNSIGNED -HEX -holdScope display_data_in[8:0]
+addSignal -h 15 -holdScope display_en
+addSignal -h 15 -UNSIGNED -HEX -holdScope out_to_led0[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope out_to_led1[6:0]
+addSignal -h 15 -holdScope rst_n
+addGroup "G2"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_01_uart\led_display_test.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm open
+
+"/led_display_test"
+
+SCOPE_LIST_BEGIN
+"/led_display_test"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

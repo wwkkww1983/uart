@@ -1,0 +1,116 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 1985 174 1548 744 209 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "F:\Robei\practice\homework_02_uart_16550\led_disp_tb.vcd" "F:\Robei\practice\homework_02_uart_16550\led_disp_tb.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 1266343.000000
+cursor 167204.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 19
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname uart.cs_rx
+nalias IDLE_RX		4'b0000		NULL
+nalias START_RX		4'b0001		NULL
+nalias STOP_RX		4'b0100		NULL
+nalias ERROR_RX		4'b1000		NULL
+nalias RECEIVE_RX		4'b0010		NULL
+
+aliasmapname uart.cs_tx
+nalias SEND_TX		3'b010		NULL
+nalias IDLE_TX		3'b000		NULL
+nalias START_TX		3'b001		NULL
+nalias STOP_TX		3'b100		NULL
+
+addGroup "G1"
+activeDirFile "" "F:\Robei\practice\homework_02_uart_16550\led_disp_tb.vcd.fsdb"
+addSignal -h 15 /led_disp_tb/led_disp1/uart2/clk
+addSignal -h 15 -holdScope rx
+addSignal -h 15 -holdScope rx_q
+addSignal -h 15 -holdScope rx_start
+addSignal -h 15 -UNSIGNED -UDEC -holdScope rx_cnt[7:0]
+aliasname uart.cs_rx
+addSignal -h 15 -UNSIGNED -HEX -holdScope ns_rx[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope count_cycle_rx[3:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received_temp[8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received_check[8:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received[7:0]
+addSignal -h 15 -holdScope rx_buf_full
+addGroup "G2"
+addSignal -h 15 -UNSIGNED -HEX /led_disp_tb/led0[8:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope led1[8:0]
+addGroup "G3"
+addSignal -h 15 /led_disp_tb/led_disp1/led_display3/display_en
+addSignal -h 15 -holdScope display_en_q
+addSignal -h 15 -holdScope display_start
+addSignal -h 15 -holdScope display_flag
+addSignal -h 15 -UNSIGNED -HEX -holdScope display_data_in[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope led0_temp[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope led1_temp[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope out_to_led0[8:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope out_to_led1[8:0]
+addGroup "G4"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_02_uart_16550\led_disp_tb.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/led_disp_tb"
+"/led_disp_tb/led_disp1"
+"/led_disp_tb/led_disp1/uart2"
+
+SCOPE_LIST_BEGIN
+"/led_disp_tb/led_disp1/uart2"
+"/led_disp_tb"
+"/led_disp_tb/led_disp1/generate_clk1"
+"/led_disp_tb/led_disp1/led_display3"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

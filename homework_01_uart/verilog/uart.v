@@ -69,7 +69,7 @@ module uart(
 	  end
 	  //
 	  // Count disable
-	  else if( rx_cnt == 8'd171 ) begin
+	  else if( rx_cnt == 8'd169 ) begin
 	    rx_cnt_en <= #`DEL 1'b0;
 	  end
 	end     
@@ -136,7 +136,7 @@ module uart(
 	        data_received_temp[8] <= #`DEL rx;
 	        rx_buf_full           <= #`DEL 1'b0;
 	      end  // Parity check
-	      8'd170: begin
+	      8'd168: begin
 	        rx_buf_full           <= #`DEL 1'b1;
 	      end  // Stop bit
 	      default:begin

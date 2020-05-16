@@ -1,0 +1,119 @@
+Magic 271485
+Revision 5.4v9
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 2162 145 1548 696 189 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / -i 0 "" "F:\Robei\practice\homework_02_uart_16550\uart_tb.vcd" "F:\Robei\practice\homework_02_uart_16550\uart_tb.vcd.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 20089.915254 21516.212268
+cursor 20451.000000
+marker 0.000000
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 29
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname uart.cs_tx
+nalias SEND_TX		3'b010		NULL
+nalias IDLE_TX		3'b000		NULL
+nalias START_TX		3'b001		NULL
+nalias STOP_TX		3'b100		NULL
+
+aliasmapname uart.cs_rx
+nalias IDLE_RX		4'b0000		NULL
+nalias START_RX		4'b0001		NULL
+nalias STOP_RX		4'b0100		NULL
+nalias ERROR_RX		4'b1000		NULL
+nalias RECEIVE_RX		4'b0010		NULL
+
+addGroup "Test bench"
+activeDirFile "" "F:\Robei\practice\homework_02_uart_16550\uart_tb.vcd.fsdb"
+addSignal -h 15 /uart_tb/clk
+addSignal -h 15 -holdScope rst_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope parity[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope stop_bit[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_bit[3:0]
+addSignal -h 15 -holdScope rx
+addSignal -h 15 -holdScope rx_buf_full
+addSignal -h 15 -holdScope tx_en
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_send[7:0]
+addSignal -h 15 -holdScope tx
+addSignal -h 15 -holdScope tx_buf_full
+addGroup "Send data" -e FALSE
+addSignal -h 15 -UNSIGNED -HEX /uart_tb/uart1/parity[2:0]
+addSignal -h 15 -holdScope parity_bit
+aliasname uart.cs_tx
+addSignal -h 15 -UNSIGNED -HEX -holdScope ns_tx[2:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope tx_cnt[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope count_cycle_tx[3:0]
+addGroup "Receive data"
+addSignal -h 15 /uart_tb/uart1/rx
+addSignal -h 15 -holdScope rx_q
+addSignal -h 15 -holdScope rx_start
+aliasname uart.cs_rx
+addSignal -h 15 -UNSIGNED -HEX -holdScope ns_rx[3:0]
+aliasname uart.cs_rx
+addSignal -h 15 -UNSIGNED -HEX -holdScope cs_rx[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope cnt_parity_rx[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope count_cycle_rx[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope rx_cnt[7:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received_temp[8:0]
+addSignal -h 15 -holdScope rx_buf_full
+addSignal -h 15 -UNSIGNED -BIN -holdScope data_received[7:0]
+addGroup "G4"
+addGroup "G5"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "F:\Robei\practice\homework_02_uart_16550\uart_tb.vcd.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm open
+
+"/uart_tb"
+"/uart_tb/uart1"
+
+SCOPE_LIST_BEGIN
+"/uart_tb"
+"/uart_tb/uart1"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

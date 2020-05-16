@@ -1,0 +1,14 @@
+<!DOCTYPE Robei>
+<Module Class="module" X="0" Y="0" Color="#d3d3d3" Name="generate_clk_test" Height="600" Comment="" Width="900" Type="testbench" Time_Scale="" Parent="0" File="Current/generate_clk_test.test" Include="" Code="initial begin&#xa;  clk = 0;&#xa;end&#xa;always #10 clk = ~clk;&#xa;&#xa;initial begin&#xa;  rst_n = 1;&#xa;  repeat(1) @( posedge clk ) #1;&#xa;  rst_n = 0;&#xa;  repeat(1) @( posedge clk ) #1;&#xa;  rst_n = 1;&#xa;  #5000 $finish;&#xa;end&#xa;">
+ <Module Class="generate_clk" X="340.779" Y="204.416" Color="#d3d3d3" Name="generate_clk1" Height="160" Comment="" Width="160" Type="model" Parent="generate_clk_test" File="Current/generate_clk.model" Include="" Code="&#x9;`define DEL 1&#xa;&#x9;&#xa;  //&#xa;&#x9;// Division is 78, which duty is 50% and frequency is 153846Hz&#xa;  // 153846 = 16 * 9600&#xa;&#x9;//&#xa;  reg [6:0] cnt;&#xa;&#xa;  always @( posedge clk or negedge rst_n ) begin&#xa;    if( ~rst_n ) begin&#xa;      cnt     &lt;= #`DEL 7'd0;&#xa;      clk_out &lt;= #`DEL 1'b0;&#xa;    end&#xa;    else if( cnt == 38 ) begin&#xa;      cnt     &lt;= #`DEL 7'd0;&#xa;      clk_out &lt;= #`DEL 1'b1;&#xa;    end&#xa;    else begin&#xa;      cnt     &lt;= #`DEL cnt + 7'd1;&#xa;      clk_out &lt;= #`DEL 1'b0;&#xa;    end&#xa;  end  &#xa;" Parameters="">
+  <Port Datasize="1" Inout="input" X="-0.125" Y="0.1875" Color="#0000ff" Name="clk" Height="20" Connect="" Function="" Width="20" Parent="generate_clk1" Side="left" Datatype="wire"/>
+  <Port Datasize="1" Inout="input" X="-0.125" Y="0.4375" Color="#00ffff" Name="rst_n" Height="20" Connect="" Function="" Width="20" Parent="generate_clk1" Side="left" Datatype="wire"/>
+  <Port Datasize="1" Inout="output" X="0.875" Y="0.26875" Color="#dc143c" Name="clk_out" Height="20" Connect="" Function="" Width="20" Parent="generate_clk1" Side="right" Datatype="reg"/>
+ </Module>
+ <Port Datasize="1" Inout="input" X="-0.0222222" Y="0.231667" Color="#0000ff" Name="clk" Height="20" Function="" Width="20" Parent="generate_clk_test" Side="left" Datatype="reg"/>
+ <Port Datasize="1" Inout="input" X="-0.0222222" Y="0.481667" Color="#00ffff" Name="rst_n" Height="20" Function="" Width="20" Parent="generate_clk_test" Side="left" Datatype="reg"/>
+ <Port Datasize="1" Inout="output" X="0.977778" Y="0.316667" Color="#dc143c" Name="clk_out" Height="20" Function="" Width="20" Parent="generate_clk_test" Side="right" Datatype="wire"/>
+ <Wire To="generate_clk_test#generate_clk1>clk" Datasize="1" Name="generate_clk_test_clk" From="generate_clk_test>clk" Parent="generate_clk_test" Datatype="wire"/>
+ <Wire To="generate_clk_test#generate_clk1>rst_n" Datasize="1" Name="generate_clk_test_rst_n" From="generate_clk_test>rst_n" Parent="generate_clk_test" Datatype="wire"/>
+ <Wire To="generate_clk_test>clk_out" Datasize="1" Name="generate_clk1_clk_out" From="generate_clk_test#generate_clk1>clk_out" Parent="generate_clk_test" Datatype="wire"/>
+</Module>
